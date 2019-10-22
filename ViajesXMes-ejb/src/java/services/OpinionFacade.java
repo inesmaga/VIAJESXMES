@@ -38,4 +38,21 @@ public class OpinionFacade extends AbstractFacade<Opinion> implements OpinionFac
         }
     
     }
+    
+    @Override
+    public List <Opinion> findValorByIdviaje(int idv, int idper){
+       String consulta;
+        try {
+         consulta ="SELECT o.valorac FROM Opinion o WHERE  o.idviaje=?1 and o.idpersona=?2 ";
+           Query query = em.createQuery(consulta);
+            query.setParameter(1, idv);
+            query.setParameter(2, idper);
+           List<Opinion> lista= query.getResultList();    
+            return lista; 
+    
+        } catch (Exception e) {
+            throw e;
+        }
+   
+    }
 }

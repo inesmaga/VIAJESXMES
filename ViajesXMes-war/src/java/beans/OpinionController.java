@@ -46,13 +46,21 @@ public class OpinionController implements Serializable{
    private List<Opinion> lista;
    
    private String topinion;
-
+private int tovalorac;
     public String getTopinion() {
         return topinion;
     }
 
     public void setTopinion(String topinion) {
         this.topinion = topinion;
+    }
+
+    public int getTovalorac() {
+        return tovalorac;
+    }
+
+    public void setTovalorac(int tovalorac) {
+        this.tovalorac = tovalorac;
     }
    
     
@@ -98,6 +106,34 @@ public void listarOpiniones(int ivia) {
 
       
     }
+  public void listarValoraciones(int ivia ) {
+        try {
+              int cv=sitioController.getCodviaj();
+              int eip=registro.getPers();
+            lista = opinionFacade.findValorByIdviaje(ivia, eip);
+            
+        } catch (Exception e) {
+            //mensaje de jsf
+        }
+
+    }
     
+    public void regisValorac(){
+        
+     Opinion op= new Opinion();
+       
+        try {
+                     
+   int eip=registro.getPers();
     
-}
+      int cv=sitioController.getCodviaj();
+      
+    op.setValorac(tovalorac);
+     
+     
+      } catch (Exception e) {
+            throw e;
+        }
+    }
+}   
+

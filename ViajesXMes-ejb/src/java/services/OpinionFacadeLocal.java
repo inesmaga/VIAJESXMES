@@ -31,4 +31,6 @@ public interface OpinionFacadeLocal {
     int count();
     
      List <Opinion> findByIdviaje(int idv);
+     
+     List <Opinion> findValorByIdviaje(int idv, int idper);
 }

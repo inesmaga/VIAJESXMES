@@ -30,12 +30,12 @@
                </div>
                 </f:facet> 
                  </p:panelGrid>
-            <p:panelGrid columns="8"  layout="grid"  style="margin-left: 1%;width: 85%; ">
+            <p:panelGrid columns="8"  layout="grid"  style="margin-left: 5%;width: 95%; ">
                 <h:form >
                             
                     <p:messages  id="mensaje" autoUpdate="true"    showDetail="true"/>
-                    <p:fieldset legend="Datos-Contacto" toggleable="true" toggleSpeed="600"  collapsed="true" style=" margin-left: 3%; height:auto; width: 100%; background-position: center">
-                  <h:panelGrid id="panel" columns="3" cellpadding="10"  >
+                    <p:fieldset legend="Datos-Contacto" toggleable="true" toggleSpeed="600"  collapsed="true" style=" margin-left: 1%; height:auto; width: 90%; background-position: center">
+                  <h:panelGrid id="panel" columns="3" cellpadding="8"  >
                             <p:focus context="panel"/>
                                                     
                              <h:outputLabel for="asunto" value="Asunto:" style="font-weight:bold;"/>
@@ -47,16 +47,16 @@
                                 <p:message for="contacto" />
                                 <p:column/> 
                       </h:panelGrid>            
-                         <h:form id="fsbtn">   
+                           
                         <p:commandButton id="enviar" value="Enviar" icon="ui-icon-key"   action="#{contacto.regisContacto()}" onclick="agenda.xhtml"  style="margin:0"  />   
                       
-                          <p:commandButton  id="atr" icon="ui-icon-arrowthick-1-w"  value="Atrás" action="at"/> 
-                          </h:form>
+                          
                  
                          </p:fieldset>
                     </h:form>  
-                                         
-                   
+                          <h:form id="fsbtn">                
+                   <p:commandButton  id="atr" icon="ui-icon-arrowthick-1-w"  value="Atrás" action="at"/> 
+                          </h:form>
                     
                     </p:panelGrid>
          

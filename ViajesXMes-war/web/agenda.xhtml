@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+         <meta name="viewport" content="width=device-width,user-scalable=si,initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <link rel="stylesheet" type="text/css" href="normalize.css" />
+        <link rel="stylesheet" type="text/css"  media ="all" href="resources/css/viajesconta.css"/>
+        <h:outputScript library="scripts" name="spanishlocale.js"/>
+        <link rel="shortcut icon"  href="resources/images/travel-ico.ico"/>
+        <title>ANUARIO-VIAJES-TUS VIAJES</title>
+        
+    </h:head>
+    <h:body>
+        <div class="flex-container">
+            <div class="header">
+                <p:graphicImage id="logo" library="images"   name="LOGOVIAJ.jpeg" />
+            </div>
+            <div class="center" >
+               
+                <p:panelGrid  id="pg2" layout="grid" columns="12" >
+                    <p:dock  id="do" position="middle-top"  >
+                        <p:menuitem   value=" Tus Viajes" icon="resources/images/tviajes.jpg" url="#"/>
+       <p:menuitem value=" Tu Agenda" icon="resources/images/agenda-pencil-.png" url="/faces/tuagenda.xhtml"/>
+       <p:menuitem value="Contáctanos" icon="/resources/images/contacto.png"  url="/faces/contacto.xhtml"  />
+                    </p:dock>
+                    </p:panelGrid> 
+                    <h:form id="fbtnh">
+                        
+                    <p:commandButton icon="ui-icon-home" value="Home" id="btnh"  action="inicio" />
+                    </h:form>
+                  </div>
+            <div class="footer">
+                <p:graphicImage id="fote" library="images"   name="FOOTER.png" />
+
+                <div id="logom">
+                    <h:graphicImage library="images" name="LogoMumtm.png"/>
+                </div>  
+            </div>
+        </div>
+    </h:body>
+    
+
+
+
+  </html>
+

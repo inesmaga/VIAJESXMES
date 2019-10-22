@@ -1,0 +1,266 @@
+body{
+	background: linear-gradient(to bottom, #666699 0%, #000000 100%);
+}
+.flex-container {
+    display: flex;
+    width: 100%;
+    max-width: 768px;
+    min-height: 100vh;
+    background-color: #1b0529;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    flex-direction: column; 
+    margin: 0 auto;
+}
+.header{
+display: flex;
+max-width: 768px;
+display: -webkit-box;
+ display: -webkit-flex;
+  display: -o-flex; 
+  display: -moz-flex; 
+  
+  -webkit-flex-direction: column; 
+   -moz-flex-direction: column;
+    flex-direction: column;
+     -webkit-align-items: center;
+      -moz-align-items: center;
+      align-items: center; 
+
+}
+#logo {
+display: flex; 
+  
+background-position:center; 
+max-width: 78%;
+min-width:65%; 
+margin: 2px;
+
+height: 80%;
+display: -webkit-flex;
+
+ 
+  -webkit-flex-direction: column; 
+   -moz-flex-direction: column;
+    flex-direction: column;
+     -webkit-align-items: center;
+      -moz-align-items: center;
+      align-items: center; 
+}
+
+#fote{
+    display: block; 	
+ float:left;
+max-width: 70%;
+margin-top: 3%; 
+margin-bottom: 0px;
+flex-shrink: 1;
+display: -webkit-box;
+ display: -webkit-flex;
+  display: -o-flex; 
+  display: -moz-flex; 
+  height: 75%;
+  -webkit-flex-direction: column; 
+   -moz-flex-direction: column;
+    flex-direction: column;
+   
+}
+.Gallery{
+ display: flex;
+  width:95%;
+  height:50%;
+background-position:center;
+margin-left: 3%;
+max-width:95%;
+ 
+
+display: -webkit-box;
+ display: -webkit-flex;
+  display: -o-flex; 
+  display: -moz-flex; 
+  
+  -webkit-flex-direction: column; 
+   -moz-flex-direction: column;
+    flex-direction: column;   
+}
+#foto{
+ width:110%;
+  height:110%;
+  
+  margin-left: 5%;
+  background-position: center;
+}
+#form{
+display: flex;
+flex-shrink: 1;
+display: -webkit-box;
+ display: -webkit-flex;
+  display: -o-flex; 
+  display: -moz-flex; 
+  
+  -webkit-flex-direction: column; 
+   -moz-flex-direction: column;
+    flex-direction: column;
+     -webkit-align-items: center;
+      -moz-align-items: center;
+      align-items: center; 
+
+}
+
+#pg2{
+   max-width:90%;
+   margin-bottom: 15px;
+     -moz-border-radius: 10px ;
+   -webkit-border-radius: 10px ;
+   
+}
+.info2{
+    
+    margin-top: 3px;
+    
+}
+#pg9{
+    width: 30%;
+    max-width: 30%;
+   margin-left:10%;
+   
+    margin-top: 4px;
+   margin-bottom: 5px;
+   align-content: center;
+     -moz-border-radius: 15px ;
+   -webkit-border-radius: 15px ; 
+}
+ @media(min-width:468px ){
+       #pg9{
+       margin-left: 270px;
+   }
+   #fsbtn{
+        margin-left:15%; 
+   }
+   #reg{
+       margin-left: 2.5em;;
+   }
+   #logo{
+     max-width: 98%;
+min-width:95%; 
+margin: 2px;
+
+height: 90%;  
+   }
+   #logom{
+     margin-top: 9%;
+     height: 75%;
+   }
+   #fote{
+      margin-top: 3%;
+      height: 85%;
+   }
+   .filaFoot{
+       height: 99%;
+   }
+ }
+#logom{
+    width:20%;
+    height: 70%;
+  margin-left: 5%; 
+    margin-bottom: 0;
+    margin-top: 3%;
+    margin-right:3%;
+   display:inline-block;
+    float: right;  
+     
+      -moz-border-radius: 10px ;
+   -webkit-border-radius: 10px ;
+ 
+     text-indent:-9999px;
+    
+}
+.footer{
+     display:inline;
+max-width: 768px;
+display: -webkit-box;
+ display: -webkit-flex;
+  display: -o-flex; 
+  display: -moz-flex; 
+
+  -webkit-flex-direction: column; 
+   -moz-flex-direction: column;
+    flex-direction: column;
+     height: 155px;
+    width: 100%;
+     margin-top:5%; 
+ 
+  margin-bottom: 0px; 
+  bottom:0px;
+  
+}
+
+.filaFoot
+{
+    width: 100%;
+    max-width: 100%;
+    min-width: 95%;
+    height: 100%;
+    margin:0 0 ;
+    overflow: hidden;
+}
+.filaFoot{
+
+	display:block;
+	width:100%;
+	max-width:100%;
+	margin:0 0;
+	text-align:center;
+	
+	background:#1b0529;
+	
+	border-top:1px solid #fff;
+	border-radius:15px;
+	padding: 0;
+
+	@media(max-width:630px){
+		display: inline-flex;
+		-webkit-border-radius: 15px;
+      		  -moz-border-radius: 15px;
+       		  border-radius: 15px;
+
+	}
+#form1{
+    width: 80%;
+    margin-left: 10px;
+}
+#form2{
+    
+    display: block;
+    margin-top: 70px;
+    margin-left: 100px;
+}
+#pow{
+     display: block;
+    margin-left:180px;;
+    margin-top: -710px;
+    margin-right: 5px;
+}
+#btnagend{
+    align-content: center;
+    display: block;
+    margin-left:- 480px;;
+    margin-top: -690px;
+    margin-right: 5px;
+    
+}
+#navMes{
+   margin-left:-40px;
+   margin-top: 10px;
+}
+#fsbtn{
+    width: 30px;
+   margin-left:2.1em; 
+   margin-top: 0;
+   align-content: center;
+   
+}
+
+#onemenu{
+    margin-top: 10px;
+}

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width,user-scalable=si,initial-scale=1.0"/>
+
+        <h:outputStylesheet library="css" name="viajestemp.css"/>
+
+        <h:outputScript library="scripts" name="spanishlocale.js"/>
+        <link rel="shortcut icon"  href="resources/images/travel-ico.ico"/>
+        <f:event type="preRenderView" listener="#{plantillaController.verificarMes()}" />
+        
+    </h:head>
+
+    <h:body>
+        <div class="flex-container">
+            <div id="top">
+                <ui:insert name="top">
+                    <div class="header" >
+                        <p:graphicImage id="logom"   value="#{plantillaController.imagenes}"  library="images" name="/logom/#{plantillaController.imagenes.get(0)}"  style=" -moz-border-radius: 10px ;-webkit-border-radius: 10px ;"/>
+                    </div>
+                    <div class="info">
+                        <p:panel id="vertical" header="A Dónde Ir:" toggleable="true" collapsed="true" closeSpeed="500" toggleOrientation="vertical">
+                            <h:panelGrid columns="2" cellpadding="4"> 
+                                <h:outputText id="AD"
+                                              value="#{mBean.ADI}" />
+                            </h:panelGrid>
+                        </p:panel>      
+                        <p:panel id="vertical2" header="Condiciones del Tiempo:" toggleable="true"  closeSpeed="500" collapsed="true" toggleOrientation="vertical">
+                            <h:panelGrid columns="2" cellpadding="4"> 
+                                <h:outputText id="CT"
+                                              value="#{mBean.CT}" />
+                            </h:panelGrid>
+                        </p:panel> 
+                    </div>
+                </ui:insert>
+            </div>
+            <div id="cuerpo">
+                <div id="left" style="margin-top: 15px ;margin-left:20px;width: 35%;height:auto;">
+                    <ui:insert name="left">
+                        <h:form>  
+                            
+                            <p:growl id="messages" showDetail="false"/>   
+                            <p:menu toggleable="true"    style="text-align: center;" model="#{plantillaController.model}"/>
+                        
+                        </h:form>   
+                       
+                    </ui:insert>
+                </div>
+                <div id="content"  style="margin-top:520px ;margin-left: 40%;width: 10%;height:auto;display: block;">
+                    <ui:insert name="content">               
+                        
+                    </ui:insert> 
+                </div>
+                <div id="right" style="margin-top:-250px ;margin-left: 1%; margin-right:10px; width: 375px;height:auto;">
+                    <ui:insert name="right">
+                        <p:imageSwitch  id="pri" effect="zoom" style="margin-top:-250px ;margin-right:10px; margin-left: 1%;width: 375px;height:auto;" >
+                            <ui:repeat value="#{plantillaController.images}" var="image">
+                                <p:graphicImage  library="images" name="/mfotos/#{image}" style="-moz-border-radius: 10px ;-webkit-border-radius: 10px ;" />
+                            </ui:repeat>
+                        </p:imageSwitch>  
+                    </ui:insert>
+                </div>
+
+            </div>
+
+        </div>  
+    </h:body>
+
+</html>

@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+         <meta name="viewport" content="width=device-width,user-scalable=si,initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <link rel="stylesheet" type="text/css" href="normalize.css" />
+        <link rel="stylesheet" type="text/css"  media ="all" href="resources/css/viajesmes.css"/>
+        <h:outputScript library="scripts" name="spanishlocale.js"/>
+        <link rel="shortcut icon"  href="resources/images/travel-ico.ico"/>
+        <title>ANUARIO-DEL-VIAJERO-SEGÚN-MES</title>
+    </h:head>
+    <h:body>
+         <div class="flex-container">
+            <div class="header" style="height: auto;width: 99%;">
+                <p:graphicImage id="logo" library="images"   name="LOGOVIAJ.jpeg" styleClass="content" style="height: 318px;width: 99%;"/>
+                
+            </div>
+              <div   class="Gallery" style="height: 345px;width: 95%;">
+                <p:contentFlow value="#{imagesView.images}" var="image"  style="height: 100%;width: 98%;background-position: center">
+                    <p:graphicImage id="foto" library="images" name="/fotmes/#{image}" styleClass="content"  />
+
+                </p:contentFlow>
+            </div>
+
+             <div class="info2">
+                 <p:panelGrid  id="pg9" layout="grid" columns="4"   style="-moz-border-radius: 15px ;
+   -webkit-border-radius: 15px ; " >
+                      <h:form id="fsbtn">
+                          
+                <p:commandButton  id="reg" icon="ui-icon-unlocked"  value="Acceso" onclick="PF('dlg1').show();"/>
+                
+                      </h:form> 
+                 </p:panelGrid>
+                 
+                     <p:dialog header="Datos de Acceso"   widgetVar="dlg1" modal="true"  showEffect="explode" hideEffect="bounce"  resizable="true" height="510" width="510">
+                <p:messages  id="mensaje" autoUpdate="true"    showDetail="true"/>
+                <h:form>
+
+                    <p:fieldset legend="New User" toggleable="true" toggleSpeed="500" collapsed="true">
+
+
+                        <h:panelGrid  columns="3" cellpadding="2"  id="pgDatos">
+                            <p:outputLabel  for="txtNombres" value="Nombres"/>
+                            <p:inputText   id="txtNombres"     value="#{registro.nombres}"  required="true"/>
+                            <p:message for="txtNombres"/>
+                            <p:outputLabel  for="txtApellidos"  value="Apellidos"/>
+                            <p:inputText   id="txtApellidos"   value="#{registro.apellidos}"  required="true"/>
+                            <p:message for="txtApellidos"/>
+                            <p:outputLabel  for="rdbSexo" value="Sexo"/>
+                            <p:selectOneRadio  id="rdbSexo"  value="#{registro.sexo}"   required="true">
+                                <f:selectItem itemValue="M" itemLabel="MASCULINO"/>
+                                <f:selectItem itemValue="F" itemLabel="FEMENINO"/>  
+                            </p:selectOneRadio>
+                            <p:message for="rdbSexo"/>
+                            <p:outputLabel  for="txtFecha" value="FechaNacimiento" />
+                            <p:calendar     id="txtFecha"  value="#{registro.fechaNacimiento}" pattern="dd-MM-yyyy" required="true" locale="es"/>
+                             
+                            <p:message for="txtFecha"/>
+                            <p:outputLabel for="email" value="Email"/>
+                            <p:inputText id="email"    value="#{registro.email}" required="true" requiredMessage="Por Favor Revise su email."
+                                         validatorMessage="Invalido Formato de email">
+                                <f:validateRegex pattern="([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)"  />
+                            </p:inputText>
+                            <p:message for="email" />
+                           
+                        </h:panelGrid>
+                        <p:separator/>
+                        <p:fieldset legend="Datos de la Cuenta">
+                            <h:panelGrid   columns="3" cellpadding="2" id="pgCuenta">
+                                <p:outputLabel  for="txtUsuario" value="Usuario" />
+                                <p:inputText   id="txtUsuario"  value="#{registro.username}"   required="true" requiredMessage="Campo Requerido,Indique un Usuario"/>
+                                <p:message for="txtUsuario"/>
+                                <p:outputLabel  for="clave1" value="Password"/>
+                                <p:password id="clave1"    value="#{registro.clave}"  required="true"  requiredMessage="Campo Requerido,Indique una Clave" validatorMessage="Las Claves NO Coinciden."
+                                            match="clave2" feedback="true" promptLabel="Ingrese una Clave"
+                                            goodLabel="Bien" strongLabel="Fuerte" weakLabel="Debil"/>
+                                <p:message for="clave1"/>
+                                <p:outputLabel  for="clave2" value="Repetir Password"/>
+                                <p:password id="clave2"   required="true" requiredMessage="Campo Requerido,Debe Confirmar su Clave"/>
+                                <p:message for="clave2"/> 
+                                <p:selectOneRadio  id="rdbTipo" value="#{registro.tipo}" required="true">
+                                    <f:selectItem itemValue="C" itemLabel="Cliente"/> 
+                                    <f:selectItem itemValue="A" itemLabel="ADMIN."/> 
+                                </p:selectOneRadio> 
+                                <p:message for="rdbTipo"/>
+                                 <p:column/>
+                                 <p:commandButton id="saveBtn" value="Registrar"   update="mensaje"  actionListener="#{registro.registrar()}"   icon="ui-icon-disk" style="margin:0"  />
+                            </h:panelGrid> 
+
+                        </p:fieldset>
+
+                    </p:fieldset>
+                </h:form>
+                <h:form>
+
+                    <p:fieldset legend="Login" toggleable="true" toggleSpeed="500" collapsed="true">
+
+
+                        <h:panelGrid id="panel" columns="3" >
+                            <p:focus context="panel"/>
+                            <p:outputLabel  for="txtUsuario1" value="Usuario" />
+                            <p:inputText   id="txtUsuario1"   value="#{registro.username}" required="true" requiredMessage="Campo Requerido,Indique un Usuario"/>
+                            <p:message for="txtUsuario1"/>
+                            <p:outputLabel  for="clave11" value="Password"/>
+                            <p:password id="clave11"   value="#{registro.clave}" required="true"  requiredMessage="Campo Requerido,Indique una Clave" 
+                                         promptLabel="Ingrese una Clave"/>
+                            <p:message for="clave11"/>
+                            <p:column/>
+                            <p:commandButton id="login" value="Login" icon="ui-icon-key"   action="#{registro.iniciarSesion()}" style="margin:0"  />
+                        </h:panelGrid> 
+
+                    </p:fieldset> 
+
+
+                </h:form>
+            </p:dialog>
+             </div>         
+            <div class="footer" >
+                <div  class="filaFoot">
+                <p:graphicImage id="fote" library="images"   name="FOOTER.png" />
+                 <p:graphicImage  id="logom" library="images" name="LogoMumtm.png" />
+                </div>
+            </div>
+        </div>
+         
+    </h:body>
+            
+             
+    
+</html>
+

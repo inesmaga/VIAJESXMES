@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta name="viewport" content="width=device-width,user-scalable=si,initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <link rel="stylesheet" type="text/css" href="normalize.css" />
+        <link rel="stylesheet" type="text/css"  media ="all" href="resources/css/viajesmes.css"/>
+        <h:outputScript library="scripts" name="spanishlocale.js"/>
+        <link rel="shortcut icon"  href="resources/images/travel-ico.ico"/>
+        <title>ANUARIO-VIAJES-HOME</title>
+    </h:head>
+    <h:body>
+        <div class="flex-container">
+            <div class="header">
+                <p:graphicImage id="logo" library="images"   name="LOGOVIAJ.jpeg" />
+            </div>
+
+            <div   class="Gallery" style="height: 600px;width: 95%;">
+                <p:contentFlow value="#{imagesView.images}" var="image"  style="height: 550px;width: 95%;background-position: center">
+                    <p:graphicImage id="foto" library="images" name="/fotmes/#{image}" styleClass="content"  />
+
+                </p:contentFlow>
+            </div>
+
+            <div id="centro">
+
+
+            <p:panelGrid  id="pg2" layout="grid" columns="5"   style="margin-left: 5%; -moz-border-radius: 10px ;-webkit-border-radius: 10px ;" >
+                <h:form id="form1"  >    
+                    <p:fieldset  id="fs1" legend="Seleccione un Mes para Ver sus Viajes:"  style="text-align: center;">
+                        <p:selectOneMenu   id="onemenu" value="#{mBean.mes}"    style="width: 60%;background-position: left;" >
+                           
+                            <f:selectItem itemLabel="Select One" itemValue=""   noSelectionOption="true"/>
+                            <f:selectItems  value="#{mBean.meses}"  var="m"  itemLabel="#{m.nommes}" itemValue="#{m.idmes}" />
+                           
+                        </p:selectOneMenu>
+                        <p:commandButton id="navMes"   value="Ir"   icon="ui-icon-arrowthick-1-e"  style="margin-left: 3%;" action="#{mBean.iniciarmes()}"/>
+                    </p:fieldset> 
+
+                </h:form>
+                <h:form id="form2">
+                     <p:commandButton id="btnagend" value=" Tus Viajes"    icon="ui-icon-suitcase" action="/agenda" />
+                   
+                     <p:commandButton  id="pow"    value="Cerrar Sesión" icon="ui-icon-power" action="/index"/>
+                
+                       
+                </h:form> 
+            </p:panelGrid>
+            </div>
+          
+            <div class="footer">
+                <p:graphicImage id="fote" library="images"   name="FOOTER.png" />
+
+             
+                    <h:graphicImage  id="logom" library="images" name="LogoMumtm.png"/>
+           
+            </div>
+        </div>
+    </h:body>
+
+</html>
+

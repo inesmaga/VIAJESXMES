@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <navigation-rule>
+        <from-view-id>/agenda.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>inicio</from-outcome>
+            <to-view-id>/principal.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+     <navigation-rule>
+        <from-view-id>/agenda.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>contacto</from-outcome>
+            <to-view-id>/contacto.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+     <navigation-rule>
+        <from-view-id>/agenda.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>agenda</from-outcome>
+            <to-view-id>/tuagenda.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+        <locale-config>
+            <default-locale>es</default-locale>
+            <supported-locale>en</supported-locale>
+        </locale-config>
+         <navigation-rule>
+        <from-view-id>/contacto.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>at</from-outcome>
+            <to-view-id>/agenda.xhtml</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/bangkok.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>re</from-outcome>
+            <to-view-id>/WEB-INF/protegido/enero.xhtml</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/lalibela.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>reg</from-outcome>
+            <to-view-id>/WEB-INF/protegido/enero.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+          
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/costarica.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>atr</from-outcome>
+            <to-view-id>/WEB-INF/protegido/enero.xhtml</to-view-id>
+        </navigation-case>
+       
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/WEB-INF/protegido/enero.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bangkok</from-outcome>
+            <to-view-id>/bangkok.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>lalibela</from-outcome>
+            <to-view-id>/lalibela.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>costarica</from-outcome>
+            <to-view-id>/costarica.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/principal.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>case1</from-outcome>
+            <to-view-id>/principal.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>case2</from-outcome>
+            <to-view-id>/principal.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/WEB-INF/protegido/febrero.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>home1</from-outcome>
+            <to-view-id>/principal.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

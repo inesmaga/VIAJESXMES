@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width,user-scalable=si,initial-scale=1.0"/>
+
+        <h:outputStylesheet library="css" name="viajestemp.css"/>
+
+        <h:outputScript library="scripts" name="spanishlocale.js"/>
+        <link rel="shortcut icon"  href="resources/images/travel-ico.ico"/>
+        <f:metadata>      
+
+            <f:event type="preRenderView" listener="#{sitioController.verificarSitio()}" />
+        </f:metadata>
+    </h:head>
+
+
+    <h:body>
+        <div class="flex-container">
+            <div id="top">
+                <ui:insert name="top">top</ui:insert>
+            </div>
+
+            <div id="left2">
+                <ui:insert name="left">
+                    <div class="info2">
+                        <p:panel id="vertical1" header="Como Llegar:" toggleable="true" collapsed="true" closeSpeed="500" toggleOrientation="vertical">
+                            <h:panelGrid columns="2" cellpadding="4"> 
+                                <h:outputText id="CLL"
+                                              value="#{sitioController.CLL}" />
+                            </h:panelGrid>
+                        </p:panel>      
+                        <p:panel id="vertical12" header="Como Desplazarse:" toggleable="true"  closeSpeed="500" collapsed="true" toggleOrientation="vertical">
+                            <h:panelGrid columns="2" cellpadding="4"> 
+                                <h:outputText id="CD"
+                                              value="#{sitioController.CD}" />
+                            </h:panelGrid>
+                        </p:panel> 
+                        <p:panel id="vertical3" header="El Tiempo:" toggleable="true"  closeSpeed="500" collapsed="true" toggleOrientation="vertical">
+                            <h:panelGrid columns="2" cellpadding="4"> 
+                                <h:outputText id="ET"
+                                              value="#{sitioController.ET}" />
+                            </h:panelGrid>
+                        </p:panel>
+                        <p:panel id="vertical4" header="Dónde Dormir:" toggleable="true"  closeSpeed="500" collapsed="true" toggleOrientation="vertical">
+                            <h:panelGrid columns="2" cellpadding="4"> 
+                                <h:outputText id="DD"
+                                              value="#{sitioController.DD}" />
+                            </h:panelGrid>
+                        </p:panel>
+                        <p:panel id="vertical5" header="Dónde Comer:" toggleable="true"  closeSpeed="500" collapsed="true" toggleOrientation="vertical">
+                            <h:panelGrid columns="2" cellpadding="4"> 
+                                <h:outputText id="DCO"
+                                              value="#{sitioController.DCO}" />
+                            </h:panelGrid>
+                        </p:panel>
+                        <p:panel id="vertical6" header="WEB de Contacto:" toggleable="true"  closeSpeed="500" collapsed="true" toggleOrientation="vertical">
+                            <h:panelGrid columns="2" cellpadding="4"> 
+                                <h:outputText id="WEB"
+                                              value="#{sitioController.WEB}" />
+                            </h:panelGrid>
+                        </p:panel>
+
+                    </div> 
+                </ui:insert>
+            </div>
+            <div id="content2" >
+                <ui:insert name="content2">
+                    <p:scrollPanel  id="ps0" mode="native"  style="margin-top:15px; width:460px;height:275px">
+                        <h:outputText id="DESC"  value="#{sitioController.DESC}" />
+                    </p:scrollPanel> 
+
+                </ui:insert>
+            </div>
+
+            <div id="bottom">
+                <ui:insert name="bottom">
+                    <h:form id="fsbtn">
+
+                        <p:commandButton  id="at" icon="ui-icon-arrowthick-1-w"  value="Atrás" action="re"/>
+                        <p:commandButton  id="op" icon="ui-icon-comment"  value="Opinar" onclick="PF('dlg4').show();" />
+                        <p:commandButton  id="va" icon="ui-icon-star "  value="Valorar" onclick="PF('dlg5').show();"/>
+                        <p:commandButton  id="ga" icon="ui-icon-disk"  value="Guardar" />
+                    </h:form>
+
+                    <p:dialog header="Opiniones"   widgetVar="dlg4" modal="true" showEffect="explode"  style="-moz-border-radius: 15px ; -webkit-border-radius: 15px" hideEffect="bounce"  resizable="true" height="510" width="510">
+                        <p:messages  id="mensaje" autoUpdate="true"    showDetail="true"/>
+                        <h:form>
+                            <p:fieldset legend="Opiniones◄╝Otros Usuarios" toggleable="true" toggleSpeed="500" collapsed="true">
+
+                            </p:fieldset>   
+                        </h:form>
+                        <h:form>
+                            <p:fieldset legend="Tú Opinión" toggleable="true" toggleSpeed="500" collapsed="true">
+                                <p:editor widgetVar="editor2"  id="tuopinion" value="#{opinionController.topinion}"   style=" width: 300px;height: 300px;-moz-border-radius: 10px ; -webkit-border-radius: 10px "/> 
+                                <h:panelGrid columns="2" style="margin-top:5px">
+                                    <p:commandButton id="saveOp" value="Opinar"   actionListener="#{opinionController.regisOpinion()}"  onclick="Sitio.xhtml" update="mensaje" icon="ui-icon-comment" />
+
+                                    <p:commandButton value="Clear" type="button" onclick="PF('editor2').clear();" icon="ui-icon-close"   />
+                                </h:panelGrid> 
+
+                            </p:fieldset>
+                        </h:form>
+                    </p:dialog>
+                    <p:dialog header="Valoración"   widgetVar="dlg5" modal="true" showEffect="explode" hideEffect="bounce" resizable="true"  height="150" width="350">
+
+
+                        <h:form id="fsbv">
+                            <h:panelGrid columns="2" cellpadding="6">
+                                <h:outputText value="Valoración Promedio:" />
+                                <p:rating value="#{rating.rating2}" readonly="true" />  
+                                <h:outputText value="Tu Valoración:" />
+                                <p:rating value="#{rating.rating1}" />
+                            </h:panelGrid>  
+                            <p:column/>
+                            <p:commandButton  id="rva" icon="ui-icon-star"  value="Valorar" />
+                        </h:form>      
+                    </p:dialog>  
+                </ui:insert>
+            </div>
+
+        </div>
+    </h:body>
+
+</html>

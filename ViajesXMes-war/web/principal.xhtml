@@ -16,11 +16,11 @@
     <h:body>
         <div class="flex-container">
             <div class="header">
-                <p:graphicImage id="logo" library="images"   name="LOGOVIAJ.jpeg" />
+                <p:graphicImage id="logo" library="images"   name="LOGOVIAJ.jpeg" style="height: 318px;width: 99%;" />
             </div>
 
-            <div   class="Gallery" style="height: 600px;width: 95%;">
-                <p:contentFlow value="#{imagesView.images}" var="image"  style="height: 550px;width: 95%;background-position: center">
+            <div   class="Gallery" style="height: 450px;width: 95%;margin-left: 5%;">
+                <p:contentFlow value="#{imagesView.images}" var="image"  style="height: 440px;width: 98%;background-position: center">
                     <p:graphicImage id="foto" library="images" name="/fotmes/#{image}" styleClass="content"  />
 
                 </p:contentFlow>
@@ -29,7 +29,7 @@
             <div id="centro">
 
 
-            <p:panelGrid  id="pg2" layout="grid" columns="5"   style="margin-left: 5%; -moz-border-radius: 10px ;-webkit-border-radius: 10px ;" >
+            <p:panelGrid  id="pg2" layout="grid" columns="5"   style="margin-left: 5%; width: 95%; -moz-border-radius: 10px ;-webkit-border-radius: 10px ;" >
                 <h:form id="form1"  >    
                     <p:fieldset  id="fs1" legend="Seleccione un Mes para Ver sus Viajes:"  style="text-align: center;">
                         <p:selectOneMenu   id="onemenu" value="#{mBean.mes}"    style="width: 60%;background-position: left; margin-left:1%; " >
@@ -43,7 +43,7 @@
 
                 </h:form>
                 <h:form id="form2">
-                     <p:commandButton id="btnagend" value=" Tus Viajes"    icon="ui-icon-suitcase" action="/agenda" />
+                     <p:commandButton id="btnagend" value=" Tus Viajes"   style="margin-bottom: 10%;" icon="ui-icon-suitcase" action="/agenda" />
               
                      <p:commandButton  id="pow"    value="Cerrar Sesión" icon="ui-icon-power" action="/index"/>
                 

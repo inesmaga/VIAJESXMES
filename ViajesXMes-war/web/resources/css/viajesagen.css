@@ -81,6 +81,23 @@ margin-top: 3%;
    -webkit-border-radius: 10px ;
    
 }
+#fote{
+    display: block; 	
+ float:left;
+max-width: 70%;
+margin-top: 3%; 
+margin-bottom: 0px;
+flex-shrink: 1;
+display: -webkit-box;
+ display: -webkit-flex;
+  display: -o-flex; 
+  display: -moz-flex; 
+  height: 75%;
+  -webkit-flex-direction: column; 
+   -moz-flex-direction: column;
+    flex-direction: column;
+   
+}
  @media(min-width:468px ){
        #pg9{
        margin-left: 270px;
@@ -107,13 +124,11 @@ height: 85%;
    .filaFoot{
        height: 99%;
    }
-   #reg{
-       margin-left:65%; 
-   }
+   
  }
 #logom{
     width:20%;
-    height: 70%;
+    height: 80%;
   margin-left: 5%; 
     margin-bottom: 0;
     margin-top: 3%;
@@ -149,7 +164,7 @@ justify-content: space-between;
 
 .filaFoot
 {
-    width: 100%;
+    width: 110%;
     max-width: 100%;
     min-width: 95%;
     height: 100%;
@@ -159,7 +174,7 @@ justify-content: space-between;
 .filaFoot{
 
 	display:block;
-	width:100%;
+	width:110%;
 	max-width:100%;
 	margin:0 0;
 	text-align:center;

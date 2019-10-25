@@ -30,11 +30,11 @@
                </div>
                 </f:facet> 
                  </p:panelGrid>
-            <p:panelGrid columns="8"  layout="grid"  style="margin-left: 5%;width: 95%; ">
+            <p:panelGrid columns="8" id="panelC" layout="grid"  style="margin-left: 5%;width: 95%;">
                 <h:form >
                             
                     <p:messages  id="mensaje" autoUpdate="true"    showDetail="true"/>
-                    <p:fieldset legend="Datos-Contacto" toggleable="true" toggleSpeed="600"  collapsed="true" style=" margin-left: 1%; height:auto; width: 90%; background-position: center">
+                    <p:fieldset legend="Datos-Contacto" toggleable="true" toggleSpeed="500"  collapsed="true" style=" margin-left: 1%; height:auto; width: 90%; background-position: center">
                   <h:panelGrid id="panel" columns="3" cellpadding="8"  >
                             <p:focus context="panel"/>
                                                     
@@ -49,12 +49,10 @@
                       </h:panelGrid>            
                            
                         <p:commandButton id="enviar" value="Enviar" icon="ui-icon-key"   action="#{contacto.regisContacto()}" onclick="agenda.xhtml"  style="margin:0"  />   
-                      
-                          
-                 
+                            
                          </p:fieldset>
                     </h:form>  
-                          <h:form id="fsbtn">                
+                    <h:form id="fsbtn">                
                    <p:commandButton  id="atr" icon="ui-icon-arrowthick-1-w"  value="Atrás" action="at"/> 
                           </h:form>
                     
@@ -62,7 +60,12 @@
          
          
         </div>
-              
+         <div class="footer" >
+                <div  class="filaFoot">
+                <p:graphicImage id="fote" library="images"   name="FOOTER.png" />
+                 <p:graphicImage  id="logom" library="images" name="LogoMumtm.png" />
+                </div>
+            </div>      
         </div>
     </h:body>
 </html>

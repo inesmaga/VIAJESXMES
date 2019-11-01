@@ -9,10 +9,10 @@
           <meta name="viewport" content="width=device-width,user-scalable=si,initial-scale=1.0"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
         <link rel="stylesheet" type="text/css" href="normalize.css" />
-        <link rel="stylesheet" type="text/css"  media ="all" href="resources/css/viajesconta.css"/>
+        <link rel="stylesheet" type="text/css"  media ="all" href="resources/css/viajestuagenda.css"/>
         <h:outputScript library="scripts" name="spanishlocale.js"/>
         <link rel="shortcut icon"  href="resources/images/travel-ico.ico"/>
-        <title>ANUARIO-VIAJES-CONTACTO</title>
+        <title>ANUARIO-VIAJES-TU-AGENDA</title>
     </h:head>
     <h:body>
         <div class="flex-container">
@@ -20,113 +20,245 @@
                 <p:graphicImage id="logo" library="images"   name="LOGOVIAJ.jpeg" />
             </div>
         <div class="center" > 
-         <h:form id="form">
+        <p:panelGrid  id="pg2" layout="grid" columns="5"   style="height: 528px; margin-left: 2%; margin-top: 1%; width: 95%; -moz-border-radius: 15px ;-webkit-border-radius: 15px ;">    
+         <h:form id="form" style="height: 525px; margin-bottom: 1%;">
          
-       <p:tabView orientation="left">
+       <p:tabView orientation="left" >
         <p:tab title="Enero">                    
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="demo/images/godfather/godfather1.jpg" />
-                <h:outputText
-                    value="The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding. 
-                    His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
-                    Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family, kind and benevolent to those who give respect, 
-                    but given to ruthless violence whenever anything stands against the good of the family." />
+            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(1)}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados" >
+        <h:outputText value="#{viaj.nameviaje}" />
+    </p:column>
+ 
+    <p:column headerText="Realizado">
+        <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        </p:inputSwitch>
+        <h:outputText value="Value 2: #{tviaje.value2}" />
+    </p:column>
+   </p:dataTable>
+
             </h:panelGrid>
         </p:tab>
         <p:tab title="Febrero">
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
-                <h:outputText value="Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. 
-                In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy, 
-                killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows." />
+            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+               
+                  
+<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados">
+        <h:outputText value="#{car.id}" />
+    </p:column>
+ 
+    <p:column headerText="Realizado">
+       <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        </p:inputSwitch>
+        <h:outputText value="Value 2: #{tviaje.value2}" />
+    </p:column>
+   </p:dataTable>
             </h:panelGrid>
         </p:tab>
         <p:tab title="Marzo">
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                <h:outputText value="After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. 
-                    Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate." />
+            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+              
+<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados">
+        <h:outputText value="#{car.id}" />
+    </p:column>
+ 
+    <p:column headerText="Realizado">
+       <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        </p:inputSwitch>
+        <h:outputText value="Value 2: #{tviaje.value2}" />
+    </p:column>
+   </p:dataTable>
             </h:panelGrid>
         </p:tab>
            <p:tab title="Abril">                    
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="demo/images/godfather/godfather1.jpg" />
-                <h:outputText
-                    value="The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding. 
-                    His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
-                    Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family, kind and benevolent to those who give respect, 
-                    but given to ruthless violence whenever anything stands against the good of the family." />
+            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                
+                     
+<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados">
+        <h:outputText value="#{car.id}" />
+    </p:column>
+ 
+    <p:column headerText="Realizado">
+       <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        </p:inputSwitch>
+        <h:outputText value="Value 2: #{tviaje.value2}" />
+    </p:column>
+   </p:dataTable>
             </h:panelGrid>
         </p:tab>
         <p:tab title="Mayo">
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
-                <h:outputText value="Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. 
-                In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy, 
-                killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows." />
+            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+               
+                      
+<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados">
+        <h:outputText value="#{car.id}" />
+    </p:column>
+ 
+    <p:column headerText="Realizado">
+       <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        </p:inputSwitch>
+        <h:outputText value="Value 2: #{tviaje.value2}" />
+    </p:column>
+   </p:dataTable>
             </h:panelGrid>
         </p:tab>
         <p:tab title="Junio">
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                <h:outputText value="After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. 
-                    Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate." />
+            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+               
+                     
+<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados">
+        <h:outputText value="#{car.id}" />
+    </p:column>
+ 
+    <p:column headerText="Realizado">
+        <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        </p:inputSwitch>
+        <h:outputText value="Value 2: #{tviaje.value2}" />
+    </p:column>
+   </p:dataTable>
             </h:panelGrid>
         </p:tab>
            <p:tab title="Julio">                    
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="demo/images/godfather/godfather1.jpg" />
-                <h:outputText
-                    value="The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding. 
-                    His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
-                    Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family, kind and benevolent to those who give respect, 
-                    but given to ruthless violence whenever anything stands against the good of the family." />
+            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                
+                    
+<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados">
+        <h:outputText value="#{car.id}" />
+    </p:column>
+ 
+    <p:column headerText="Realizado">
+      <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        </p:inputSwitch>
+        <h:outputText value="Value 2: #{tviaje.value2}" />
+    </p:column>
+   </p:dataTable>
             </h:panelGrid>
         </p:tab>
         <p:tab title="Agosto">
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
-                <h:outputText value="Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. 
-                In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy, 
-                killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows." />
+            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                
+                    
+<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados">
+        <h:outputText value="#{car.id}" />
+    </p:column>
+ 
+    <p:column headerText="Realizado">
+        <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        </p:inputSwitch>
+        <p:dialog header="Values" modal="true" resizable="false" showEffect="fade" widgetVar="dlg">
+        <h:panelGrid columns="1" id="display">
+            <h:outputText value="Value 2: #{tviaje.value2}" />
+        </h:panelGrid>
+        </p:dialog>
+    </p:column>
+   </p:dataTable>
             </h:panelGrid>
         </p:tab>
         <p:tab title="Septiembre">
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                <h:outputText value="After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. 
-                    Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate." />
+            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;">
+               
+                     
+<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados">
+        <h:outputText value="#{car.id}" />
+    </p:column>
+ 
+    <p:column headerText="Realizado">
+        <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        </p:inputSwitch>
+        <h:outputText value="Value 2: #{tviaje.value2}" />
+    </p:column>
+   </p:dataTable>
             </h:panelGrid>
         </p:tab>
            <p:tab title="Octubre">                    
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="demo/images/godfather/godfather1.jpg" />
-                <h:outputText
-                    value="The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding. 
-                    His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
-                    Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family, kind and benevolent to those who give respect, 
-                    but given to ruthless violence whenever anything stands against the good of the family." />
+            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                
+                     
+<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados">
+        <h:outputText value="#{car.id}" />
+    </p:column>
+ 
+    <p:column headerText="Realizado">
+        <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        </p:inputSwitch>
+        <h:outputText value="Value 2: #{tviaje.value2}" />
+    </p:column>
+   </p:dataTable>
             </h:panelGrid>
         </p:tab>
         <p:tab title="Noviembre">
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
-                <h:outputText value="Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. 
-                In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy, 
-                killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows." />
+            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+               
+                     
+<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados">
+        <h:outputText value="#{car.id}" />
+    </p:column>
+ 
+    <p:column headerText="Realizado">
+      <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        </p:inputSwitch>
+        <h:outputText value="Value 2: #{tviaje.value2}" />
+    </p:column>
+   </p:dataTable>
             </h:panelGrid>
         </p:tab>
         <p:tab title="Diciembre">
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                <h:outputText value="After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. 
-                    Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate." />
+            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+               
+                     
+<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados">
+        <h:outputText value="#{car.id}" />
+    </p:column>
+ 
+    <p:column headerText="Realizado">
+        <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        </p:inputSwitch>
+        <h:outputText value="Value 2: #{tviaje.value2}" />
+    </p:column>
+   </p:dataTable>
             </h:panelGrid>
         </p:tab>
     </p:tabView>
             
-         </h:form>     
-        </div>   
+         </h:form>  
+        </p:panelGrid>
+             </div>
+            <div>
+            <h:form id="fbtnh">
+               <p:commandButton  id="atr" icon="ui-icon-arrowthick-1-w"  value="Atrás" action="at"/> 
+             </h:form>
+            </div>
+            <div class="footer" >
+                <div  class="filaFoot">
+                <p:graphicImage id="fote" library="images"   name="FOOTER.png" />
+                 <p:graphicImage  id="logom" library="images" name="LogoMumtm.png" />
+                </div>
+            </div>   
+            
         </div>
     </h:body>
 </html>

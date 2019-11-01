@@ -1,6 +1,10 @@
 
 package beans;
 
+
+
+
+
 import entities.Opinion;
 import static entities.Opinion_.fechaop;
 import java.io.Serializable;

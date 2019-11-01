@@ -30,4 +30,6 @@ public interface AgendaFacadeLocal {
 
     int count();
     
+    List <Agenda>  findViajGuard(int idmes, int idpers,  String est);
+    
 }

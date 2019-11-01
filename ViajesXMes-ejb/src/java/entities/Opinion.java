@@ -14,13 +14,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -46,21 +47,20 @@ public class Opinion implements Serializable {
     @Column(name = "codigo")
     private Integer codigo;
     @Basic(optional = false)
-    @NotNull
+
     @Column(name = "idviaje")
     private int idviaje;
     @Basic(optional = false)
-    @NotNull
+ 
     @Column(name = "idpersona")
     private int idpersona;
     @Basic(optional = false)
-    @NotNull
+
     @Lob
-    @Size(min = 1, max = 16777215)
     @Column(name = "opinion")
     private String opinion;
     @Basic(optional = false)
-    @NotNull
+
     @Column(name = "fechaop")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaop;

@@ -19,8 +19,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -45,23 +45,22 @@ public class Contactos implements Serializable {
     @Column(name = "codigo")
     private Integer codigo;
     @Basic(optional = false)
-    @NotNull
+
     @Column(name = "idpersona")
     private int idpersona;
     @Basic(optional = false)
-    @NotNull
+
     @Column(name = "fechacont")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechacont;
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 90)
+ 
     @Column(name = "tema")
     private String tema;
     @Basic(optional = false)
-    @NotNull
+
     @Lob
-    @Size(min = 1, max = 16777215)
+   
     @Column(name = "descripcion")
     private String descripcion;
 

@@ -17,7 +17,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -38,22 +38,22 @@ public class Meses implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @NotNull
+   
     @Column(name = "idmes")
     private Integer idmes;
     @Basic(optional = false)
-    @NotNull
+   
     @Size(min = 1, max = 11)
     @Column(name = "nommes")
     private String nommes;
     @Basic(optional = false)
-    @NotNull
+ 
     @Lob
     @Size(min = 1, max = 16777215)
     @Column(name = "adonde")
     private String adonde;
     @Basic(optional = false)
-    @NotNull
+
     @Lob
     @Size(min = 1, max = 16777215)
     @Column(name = "condtiemp")

@@ -18,7 +18,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -44,20 +44,20 @@ public class Menu implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @NotNull
+
     @Column(name = "codigo")
     private Integer codigo;
     @Basic(optional = false)
-    @NotNull
+  
     @Column(name = "idmes")
     private int idmes;
     @Basic(optional = false)
-    @NotNull
+ 
     @Size(min = 1, max = 50)
     @Column(name = "nombre")
     private String nombre;
     @Basic(optional = false)
-    @NotNull
+  
     @Size(min = 1, max = 2)
     @Column(name = "tipo")
     private String tipo;
@@ -65,18 +65,18 @@ public class Menu implements Serializable {
     @Column(name = "url")
     private String url;
     @Basic(optional = false)
-    @NotNull
+
     @Lob
     @Size(min = 1, max = 16777215)
     @Column(name = "Descripcion")
     private String descripcion;
     @Basic(optional = false)
-    @NotNull
+
     @Size(min = 1, max = 2)
     @Column(name = "tipoUsuario")
     private String tipoUsuario;
     @Basic(optional = false)
-    @NotNull
+
     @Column(name = "estado")
     private boolean estado;
     @OneToMany(mappedBy = "codigoSubmenu")

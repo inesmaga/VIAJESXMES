@@ -3,6 +3,7 @@
               xmlns="http://xmlns.jcp.org/xml/ns/javaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+   
     <navigation-rule>
         <from-view-id>/agenda.xhtml</from-view-id>
         <navigation-case>
@@ -18,6 +19,7 @@
             <to-view-id>/contacto.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    
      <navigation-rule>
         <from-view-id>/agenda.xhtml</from-view-id>
         <navigation-case>
@@ -29,6 +31,7 @@
             <default-locale>es</default-locale>
             <supported-locale>en</supported-locale>
         </locale-config>
+        
          <navigation-rule>
         <from-view-id>/contacto.xhtml</from-view-id>
         <navigation-case>
@@ -36,8 +39,17 @@
             <to-view-id>/agenda.xhtml</to-view-id>
         </navigation-case>
         
+        </navigation-rule>
+        
+          <navigation-rule>
+        <from-view-id>/tuagenda.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>atr</from-outcome>
+            <to-view-id>/agenda.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
-    <navigation-rule>
+    
+   <navigation-rule>
         <from-view-id>/bangkok.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>re</from-outcome>

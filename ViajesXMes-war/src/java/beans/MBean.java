@@ -88,6 +88,7 @@ public class MBean implements Serializable {
     public String iniciarmes() {
         String paginame = null;
         String direccion = null;
+       
        ADI= null;
          CT=null;
    model = new DefaultMenuModel();
@@ -100,7 +101,7 @@ public class MBean implements Serializable {
                m = (Meses) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("mes", me);
            ADI= me.getAdonde();
            CT= me.getCondtiemp();
-         
+                
                 paginame = me.getNommes();
                 if (paginame.equals("Enero")) {
                     direccion = "/WEB-INF/protegido/enero.xhtml";

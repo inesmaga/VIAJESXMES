@@ -87,19 +87,5 @@ return Ltviaje;
 
    
     
-    public void GuardarViaje(){
-    Agenda ag =new Agenda();
-     try {
-                     
-   int eip=registro.getPers();
-    
-      int cv=sitioController.getCodviaj();
-   
-     
-     
-    } catch (Exception e) {
-            throw e;
-        }
-    }
-    
+  
 }

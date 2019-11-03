@@ -5,8 +5,9 @@ package beans;
 
 
 
+import static com.sun.org.apache.xerces.internal.impl.xpath.regex.CaseInsensitiveMap.get;
 import entities.Opinion;
-import static entities.Opinion_.fechaop;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -38,7 +39,8 @@ public class OpinionController implements Serializable{
    @Inject 
    private SitioController sitioController;
    
-  
+   @Inject 
+   private Rating  rating;
    
    @PostConstruct
    public void init(){
@@ -50,7 +52,7 @@ public class OpinionController implements Serializable{
    private List<Opinion> lista;
    
    private String topinion;
-private int tovalorac;
+private int tovalorac ;
     public String getTopinion() {
         return topinion;
     }
@@ -100,7 +102,8 @@ public void listarOpiniones(int ivia) {
      op.setIdviaje(cv);
       op.setOpinion(topinion);
      op.setFechaop(fecha);
-       opinionFacade.create(op);
+   
+      opinionFacade.create(op);
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Gracias" , "Su Opinion ha sido Registrada"));
        
        
@@ -110,11 +113,30 @@ public void listarOpiniones(int ivia) {
 
       
     }
+    public void regisValorac(){
+    try {
+                     
+   int eip=registro.getPers();
+     int cv=sitioController.getCodviaj();
+     tovalorac= rating.getRating1();
+    List< Opinion> op =opinionFacade.cop(cv,eip);
+       if(op.get(0)!=null){ 
+ 
+
+   op.get(0).setValorac(tovalorac);
+       }
+    } catch (Exception e) {
+            throw e;
+        }
+    }
+    
+    
+    
   public void listarValoraciones(int ivia ) {
         try {
               int cv=sitioController.getCodviaj();
               int eip=registro.getPers();
-            lista = opinionFacade.findValorByIdviaje(ivia, eip);
+            lista = opinionFacade.findValoByIdviaje(cv);
             
         } catch (Exception e) {
             //mensaje de jsf
@@ -122,22 +144,6 @@ public void listarOpiniones(int ivia) {
 
     }
     
-    public void regisValorac(){
-        
-     Opinion op= new Opinion();
-       
-        try {
-                     
-   int eip=registro.getPers();
-    
-      int cv=sitioController.getCodviaj();
-      
-    op.setValorac(tovalorac);
-     
-     
-      } catch (Exception e) {
-            throw e;
-        }
-    }
-}   
-
+   
+ 
+}

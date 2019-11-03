@@ -1,5 +1,6 @@
 package beans;
 
+import entities.Agenda;
 import entities.Menu;
 import entities.Meses;
 import entities.Viajes;
@@ -10,9 +11,14 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import services.AgendaFacadeLocal;
+import services.MesesFacadeLocal;
+import services.OpinionFacadeLocal;
+import services.PersonaFacadeLocal;
 import services.ViajesFacadeLocal;
 
 /**
@@ -25,7 +31,18 @@ import services.ViajesFacadeLocal;
 public class SitioController implements Serializable {
 
     @EJB
+    private OpinionFacadeLocal opinionFacade;
+
+   
+
+    @EJB
+    private AgendaFacadeLocal agendaFacade;
+
+    
+
+    @EJB
     private ViajesFacadeLocal viajesFacade;
+    
     
 
     private List<String> Simagenes;
@@ -42,6 +59,11 @@ private String DESC;
 @Inject
 private PlantillaController plantillaController;
 
+@Inject
+private Registro registro;
+
+
+
     @PostConstruct
     public void init() {
         Viajes ve = new Viajes();
@@ -54,6 +76,8 @@ public void obtenerImgMes(){
 Simagenes = new ArrayList<>(plantillaController.getImagenes());
      
 }
+
+  
 
     public List<String> getSimagenes() {
         return Simagenes;
@@ -172,6 +196,28 @@ Simagenes = new ArrayList<>(plantillaController.getImagenes());
         this.codviaj = codviaj;
     }
    
-    
- 
+     public void  registrar() {
+        Agenda a = new Agenda();
+        int eip=registro.getPers();
+        int cm= plantillaController.getAm();
+       int iop=opinionFacade.codOp(cm, eip);
+         try { 
+      a.setIdmes(cm);
+      a.setIdpersona(eip);
+      a.setIdviaje(codviaj);
+      a.setNameviaje(DESC);
+      a.setEstado(ET);
+      a.setValorado(Boolean.FALSE);
+      a.setOpinado(Boolean.TRUE);
+      a.setIdopinion(iop);
+      agendaFacade.create(a);
+       FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Gracias" , "Su Viaje ha sido Guardado"));
+      } catch (Exception e) {
+             throw e;
+         }       
+     }     
+             
+             
+             
+             
 }

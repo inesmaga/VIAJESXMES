@@ -30,7 +30,7 @@ public class AgendaFacade extends AbstractFacade<Agenda> implements AgendaFacade
     public AgendaFacade() {
         super(Agenda.class);
     }
-   
+    
     @Override
     public List <Agenda>  findViajGuard(int idmes, int idpers,  String est){
  String consulta;
@@ -39,14 +39,12 @@ public class AgendaFacade extends AbstractFacade<Agenda> implements AgendaFacade
            Query query = em.createQuery(consulta);
             query.setParameter(1, idmes);
             query.setParameter(2, idpers);
-             query.setParameter(3, "");
+             query.setParameter(3, "G");
            List<Agenda> lista= query.getResultList();    
             return lista; 
     
         } catch (Exception e) {
             throw e;
-        }
-
-
 }
+    }
 }

@@ -21,6 +21,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -43,6 +44,51 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Viajes.findByIdOpinion", query = "SELECT v FROM Viajes v WHERE v.idOpinion = :idOpinion")})
 public class Viajes implements Serializable {
 
+    @Basic(optional = false)
+    @NotNull
+    @Lob
+    @Size(min = 1, max = 16777215)
+    @Column(name = "Descripcion")
+    private String descripcion;
+    @Basic(optional = false)
+    @NotNull
+    @Lob
+    @Size(min = 1, max = 16777215)
+    @Column(name = "CLL")
+    private String cll;
+    @Basic(optional = false)
+    @NotNull  
+    @Lob
+    @Size(min = 1, max = 16777215)
+    @Column(name = "CD")
+    private String cd;
+    @Basic(optional = false)
+    @NotNull   
+    @Lob
+    @Size(min = 1, max = 16777215)
+    @Column(name = "ET")
+    private String et;
+    @Basic(optional = false)
+    @NotNull  
+    @Lob
+    @Size(min = 1, max = 16777215)
+    @Column(name = "DD")
+    private String dd;
+    @Basic(optional = false)
+    @NotNull   
+    @Lob
+    @Size(min = 1, max = 16777215)
+    @Column(name = "DCO")
+    private String dco;
+    @Basic(optional = false)
+    @NotNull  
+    @Size(min = 1, max = 100)
+    @Column(name = "WEB")
+    private String web;
+    @Size(max = 2)
+    @Column(name = "Valorac")
+    private String valorac;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,59 +99,14 @@ public class Viajes implements Serializable {
 
     @Column(name = "idmenu")
     private int idmenu;
-    @Basic(optional = false)
-   
-    @Lob
-    @Size(min = 1, max = 16777215)
-    @Column(name = "Descripcion")
-    private String descripcion;
-    @Basic(optional = false)
-
-    @Lob
-    @Size(min = 1, max = 16777215)
-    @Column(name = "CLL")
-    private String cll;
-    @Basic(optional = false)
-  
-    @Lob
-    @Size(min = 1, max = 16777215)
-    @Column(name = "CD")
-    private String cd;
-    @Basic(optional = false)
-   
-    @Lob
-    @Size(min = 1, max = 16777215)
-    @Column(name = "ET")
-    private String et;
-    @Basic(optional = false)
-  
-    @Lob
-    @Size(min = 1, max = 16777215)
-    @Column(name = "DD")
-    private String dd;
-    @Basic(optional = false)
-   
-    @Lob
-    @Size(min = 1, max = 16777215)
-    @Column(name = "DCO")
-    private String dco;
-    @Basic(optional = false)
-  
-    @Size(min = 1, max = 100)
-    @Column(name = "WEB")
-    private String web;
     @Column(name = "NSelect")
     private Integer nSelect;
-    @Size(max = 2)
-    @Column(name = "Valorac")
-    private String valorac;
     @Column(name = "idOpinion")
     private Integer idOpinion;
     @JoinColumn(name = "idmes", referencedColumnName = "idmes")
     @ManyToOne(optional = false)
     private Meses idmes;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idviajes")
-    private List<Agenda> agendaList;
+   
 
     public Viajes() {
     }
@@ -140,6 +141,59 @@ public class Viajes implements Serializable {
 
     public void setIdmenu(int idmenu) {
         this.idmenu = idmenu;
+    }
+
+
+    public Integer getNSelect() {
+        return nSelect;
+    }
+
+    public void setNSelect(Integer nSelect) {
+        this.nSelect = nSelect;
+    }
+
+
+    public Integer getIdOpinion() {
+        return idOpinion;
+    }
+
+    public void setIdOpinion(Integer idOpinion) {
+        this.idOpinion = idOpinion;
+    }
+
+    public Meses getIdmes() {
+        return idmes;
+    }
+
+    public void setIdmes(Meses idmes) {
+        this.idmes = idmes;
+    }
+
+   
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (idviajes != null ? idviajes.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Viajes)) {
+            return false;
+        }
+        Viajes other = (Viajes) object;
+        if ((this.idviajes == null && other.idviajes != null) || (this.idviajes != null && !this.idviajes.equals(other.idviajes))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "entities.Viajes[ idviajes=" + idviajes + " ]";
     }
 
     public String getDescripcion() {
@@ -198,70 +252,12 @@ public class Viajes implements Serializable {
         this.web = web;
     }
 
-    public Integer getNSelect() {
-        return nSelect;
-    }
-
-    public void setNSelect(Integer nSelect) {
-        this.nSelect = nSelect;
-    }
-
     public String getValorac() {
         return valorac;
     }
 
     public void setValorac(String valorac) {
         this.valorac = valorac;
-    }
-
-    public Integer getIdOpinion() {
-        return idOpinion;
-    }
-
-    public void setIdOpinion(Integer idOpinion) {
-        this.idOpinion = idOpinion;
-    }
-
-    public Meses getIdmes() {
-        return idmes;
-    }
-
-    public void setIdmes(Meses idmes) {
-        this.idmes = idmes;
-    }
-
-    @XmlTransient
-    public List<Agenda> getAgendaList() {
-        return agendaList;
-    }
-
-    public void setAgendaList(List<Agenda> agendaList) {
-        this.agendaList = agendaList;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idviajes != null ? idviajes.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Viajes)) {
-            return false;
-        }
-        Viajes other = (Viajes) object;
-        if ((this.idviajes == null && other.idviajes != null) || (this.idviajes != null && !this.idviajes.equals(other.idviajes))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "entities.Viajes[ idviajes=" + idviajes + " ]";
     }
     
 }

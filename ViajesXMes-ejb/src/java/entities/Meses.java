@@ -17,6 +17,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
 
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -35,33 +37,36 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Meses.findByNommes", query = "SELECT m FROM Meses m WHERE m.nommes = :nommes")})
 public class Meses implements Serializable {
 
+    @Basic(optional = false)
+  
+    @NotNull()
+    @Size(min = 1, max = 11)
+    @Column(name = "nommes")
+    private String nommes;
+    @Basic(optional = false)
+    
+    @NotNull
+    @Lob()
+    @Size(min = 1, max = 16777215)
+    @Column(name = "adonde")
+    private String adonde;
+    @Basic(optional = false)
+ 
+    @NotNull
+    @Lob()
+    @Size(min = 1, max = 16777215)
+    @Column(name = "condtiemp")
+    private String condtiemp;
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
    
     @Column(name = "idmes")
     private Integer idmes;
-    @Basic(optional = false)
-   
-    @Size(min = 1, max = 11)
-    @Column(name = "nommes")
-    private String nommes;
-    @Basic(optional = false)
- 
-    @Lob
-    @Size(min = 1, max = 16777215)
-    @Column(name = "adonde")
-    private String adonde;
-    @Basic(optional = false)
-
-    @Lob
-    @Size(min = 1, max = 16777215)
-    @Column(name = "condtiemp")
-    private String condtiemp;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idmes")
     private List<Viajes> viajesList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idmes")
-    private List<Agenda> agendaList;
+    
 
     public Meses() {
     }
@@ -85,29 +90,6 @@ public class Meses implements Serializable {
         this.idmes = idmes;
     }
 
-    public String getNommes() {
-        return nommes;
-    }
-
-    public void setNommes(String nommes) {
-        this.nommes = nommes;
-    }
-
-    public String getAdonde() {
-        return adonde;
-    }
-
-    public void setAdonde(String adonde) {
-        this.adonde = adonde;
-    }
-
-    public String getCondtiemp() {
-        return condtiemp;
-    }
-
-    public void setCondtiemp(String condtiemp) {
-        this.condtiemp = condtiemp;
-    }
 
     @XmlTransient
     public List<Viajes> getViajesList() {
@@ -118,14 +100,6 @@ public class Meses implements Serializable {
         this.viajesList = viajesList;
     }
 
-    @XmlTransient
-    public List<Agenda> getAgendaList() {
-        return agendaList;
-    }
-
-    public void setAgendaList(List<Agenda> agendaList) {
-        this.agendaList = agendaList;
-    }
 
     @Override
     public int hashCode() {
@@ -150,6 +124,30 @@ public class Meses implements Serializable {
     @Override
     public String toString() {
         return "entities.Meses[ idmes=" + idmes + " ]";
+    }
+
+    public String getNommes() {
+        return nommes;
+    }
+
+    public void setNommes(String nommes) {
+        this.nommes = nommes;
+    }
+
+    public String getAdonde() {
+        return adonde;
+    }
+
+    public void setAdonde(String adonde) {
+        this.adonde = adonde;
+    }
+
+    public String getCondtiemp() {
+        return condtiemp;
+    }
+
+    public void setCondtiemp(String condtiemp) {
+        this.condtiemp = condtiemp;
     }
     
 }

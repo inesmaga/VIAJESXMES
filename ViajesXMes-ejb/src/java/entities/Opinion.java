@@ -14,13 +14,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
-
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -32,11 +30,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "opinion")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Opinion.findAll", query = "SELECT o FROM Opinion o")
+      @NamedQuery(name = "Opinion.findAll", query = "SELECT o FROM Opinion o")
     , @NamedQuery(name = "Opinion.findByCodigo", query = "SELECT o FROM Opinion o WHERE o.codigo = :codigo")
+    , @NamedQuery(name = "Opinion.findCByIdviajeP", query = "SELECT o.codigo FROM Opinion o WHERE o.idviaje = :idviaje and o.idpersona = :idpersona")
     , @NamedQuery(name = "Opinion.findByIdviaje", query = "SELECT o FROM Opinion o WHERE o.idviaje = :idviaje")
     , @NamedQuery(name = "Opinion.findByIdpersona", query = "SELECT o FROM Opinion o WHERE o.idpersona = :idpersona")
     , @NamedQuery(name = "Opinion.findByFechaop", query = "SELECT o FROM Opinion o WHERE o.fechaop = :fechaop")
+    , @NamedQuery(name = "Opinion.findValoByIdviaje", query = "SELECT o.valorac FROM Opinion o WHERE o.idviaje = :idviaje")   
     , @NamedQuery(name = "Opinion.findByValorac", query = "SELECT o FROM Opinion o WHERE o.valorac = :valorac")})
 public class Opinion implements Serializable {
 
@@ -47,20 +47,21 @@ public class Opinion implements Serializable {
     @Column(name = "codigo")
     private Integer codigo;
     @Basic(optional = false)
-
+  
     @Column(name = "idviaje")
     private int idviaje;
     @Basic(optional = false)
- 
+
     @Column(name = "idpersona")
     private int idpersona;
     @Basic(optional = false)
-
+  
     @Lob
+ 
     @Column(name = "opinion")
     private String opinion;
     @Basic(optional = false)
-
+  
     @Column(name = "fechaop")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaop;

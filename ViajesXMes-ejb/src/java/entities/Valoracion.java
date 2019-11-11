@@ -13,7 +13,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -27,16 +26,18 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author inesm
  */
 @Entity
-@Table(name = "opinion")
+@Table(name = "valoracion")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Opinion.findAll", query = "SELECT o FROM Opinion o")
-    , @NamedQuery(name = "Opinion.findByCodigo", query = "SELECT o FROM Opinion o WHERE o.codigo = :codigo")
-    , @NamedQuery(name = "Opinion.findCByIdviajeP", query = "SELECT o.codigo FROM Opinion o WHERE o.idviaje = :idviaje and o.idpersona = :idpersona")
-    , @NamedQuery(name = "Opinion.findByIdviaje", query = "SELECT o FROM Opinion o WHERE o.idviaje = :idviaje")
-    , @NamedQuery(name = "Opinion.findByIdpersona", query = "SELECT o FROM Opinion o WHERE o.idpersona = :idpersona")
-    , @NamedQuery(name = "Opinion.findByFechaop", query = "SELECT o FROM Opinion o WHERE o.fechaop = :fechaop")})
-public class Opinion implements Serializable {
+    @NamedQuery(name = "Valoracion.findAll", query = "SELECT v FROM Valoracion v")
+    , @NamedQuery(name = "Valoracion.findByCodigo", query = "SELECT v FROM Valoracion v WHERE v.codigo = :codigo")
+    , @NamedQuery(name = "Valoracion.findCByIdviajeP", query = "SELECT v.codigo FROM Valoracion v WHERE v.idviaje = :idviaje and v.idpersona = :idpersona")
+    , @NamedQuery(name = "Valoracion.findByIdpersona", query = "SELECT v FROM Valoracion v WHERE v.idpersona = :idpersona")
+    , @NamedQuery(name = "Valoracion.findByIdviaje", query = "SELECT v FROM Valoracion v WHERE v.idviaje = :idviaje")
+    , @NamedQuery(name = "Valoracion.findValorByIdviajeP", query = "SELECT v FROM Valoracion v WHERE v.idviaje = :idviaje and v.idpersona = :idpersona")
+    , @NamedQuery(name = "Valoracion.findByFechaval", query = "SELECT v FROM Valoracion v WHERE v.fechaval = :fechaval")
+    , @NamedQuery(name = "Valoracion.findByValorac", query = "SELECT v FROM Valoracion v WHERE v.valorac = :valorac")})
+public class Valoracion implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -45,38 +46,36 @@ public class Opinion implements Serializable {
     @Column(name = "codigo")
     private Integer codigo;
     @Basic(optional = false)
-   
-    @Column(name = "idviaje")
-    private int idviaje;
-    @Basic(optional = false)
     
     @Column(name = "idpersona")
     private int idpersona;
     @Basic(optional = false)
-   
-    @Lob
-    
-    @Column(name = "opinion")
-    private String opinion;
+
+    @Column(name = "idviaje")
+    private int idviaje;
     @Basic(optional = false)
-   
-    @Column(name = "fechaop")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaop;
 
-    public Opinion() {
+    @Column(name = "fechaval")
+    @Temporal(TemporalType.DATE)
+    private Date fechaval;
+    @Basic(optional = false)
+ 
+    @Column(name = "valorac")
+    private int valorac;
+
+    public Valoracion() {
     }
 
-    public Opinion(Integer codigo) {
+    public Valoracion(Integer codigo) {
         this.codigo = codigo;
     }
-    
-    public Opinion(Integer codigo, int idviaje, int idpersona, String opinion, Date fechaop) {
+
+    public Valoracion(Integer codigo, int idpersona, int idviaje, Date fechaval, int valorac) {
         this.codigo = codigo;
-        this.idviaje = idviaje;
         this.idpersona = idpersona;
-        this.opinion = opinion;
-        this.fechaop = fechaop;
+        this.idviaje = idviaje;
+        this.fechaval = fechaval;
+        this.valorac = valorac;
     }
 
     public Integer getCodigo() {
@@ -87,14 +86,6 @@ public class Opinion implements Serializable {
         this.codigo = codigo;
     }
 
-    public int getIdviaje() {
-        return idviaje;
-    }
-
-    public void setIdviaje(int idviaje) {
-        this.idviaje = idviaje;
-    }
-
     public int getIdpersona() {
         return idpersona;
     }
@@ -103,20 +94,28 @@ public class Opinion implements Serializable {
         this.idpersona = idpersona;
     }
 
-    public String getOpinion() {
-        return opinion;
+    public int getIdviaje() {
+        return idviaje;
     }
 
-    public void setOpinion(String opinion) {
-        this.opinion = opinion;
+    public void setIdviaje(int idviaje) {
+        this.idviaje = idviaje;
     }
 
-    public Date getFechaop() {
-        return fechaop;
+    public Date getFechaval() {
+        return fechaval;
     }
 
-    public void setFechaop(Date fechaop) {
-        this.fechaop = fechaop;
+    public void setFechaval(Date fechaval) {
+        this.fechaval = fechaval;
+    }
+
+    public int getValorac() {
+        return valorac;
+    }
+
+    public void setValorac(int valorac) {
+        this.valorac = valorac;
     }
 
     @Override
@@ -129,10 +128,10 @@ public class Opinion implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Opinion)) {
+        if (!(object instanceof Valoracion)) {
             return false;
         }
-        Opinion other = (Opinion) object;
+        Valoracion other = (Valoracion) object;
         if ((this.codigo == null && other.codigo != null) || (this.codigo != null && !this.codigo.equals(other.codigo))) {
             return false;
         }
@@ -141,8 +140,9 @@ public class Opinion implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Opinion[ codigo=" + codigo + " ]";
+        return "entities.Valoracion[ codigo=" + codigo + " ]";
     }
+    
     
     
 }

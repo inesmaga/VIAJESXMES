@@ -21,7 +21,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
+
 
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -50,40 +50,40 @@ import javax.xml.bind.annotation.XmlTransient;
 public class Persona implements Serializable {
 
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 30)
+    
+   
     @Column(name = "nombres")
     private String nombres;
     @Basic(optional = false)
-    @NotNull  
-    @Size(min = 1, max = 50)
+ 
+  
     @Column(name = "apellidos")
     private String apellidos;
     @Basic(optional = false)
-    @NotNull 
-    @Size(min = 1, max = 2)
+   
+  
     @Column(name = "sexo")
     private String sexo;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Basic(optional = false)
-    @NotNull
+ 
     @Size(min = 1, max = 50)
     @Column(name = "email")
     private String email;
     @Basic(optional = false)
-    @NotNull
+  
     @Size(min = 1, max = 10)
     @Column(name = "username")
     private String username;
     @Basic(optional = false)
-    @NotNull
+ 
     @Size(min = 1, max = 15)
     @Column(name = "clave")
     private String clave;
     @Basic(optional = false)
-    @NotNull
+
     @Size(min = 1, max = 2)
     @Column(name = "tipo")
     private String tipo;

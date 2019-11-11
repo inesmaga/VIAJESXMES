@@ -5,7 +5,7 @@
  */
 package services;
 
-import entities.Opinion;
+import entities.Valoracion;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -17,7 +17,7 @@ import javax.persistence.Query;
  * @author inesm
  */
 @Stateless
-public class OpinionFacade extends AbstractFacade<Opinion> implements OpinionFacadeLocal {
+public class ValoracionFacade extends AbstractFacade<Valoracion> implements ValoracionFacadeLocal {
 
     @PersistenceContext(unitName = "ViajesXMes-ejbPU")
     private EntityManager em;
@@ -27,35 +27,36 @@ public class OpinionFacade extends AbstractFacade<Opinion> implements OpinionFac
         return em;
     }
 
-    public OpinionFacade() {
-        super(Opinion.class);
+    public ValoracionFacade() {
+        super(Valoracion.class);
     }
-    
-      @Override
-    public List <Opinion> findByIdviaje(int idv){
-        try {
-            Query query =em.createNamedQuery("Opinion.findByIdviaje");
-    query.setParameter("idviaje",idv);
+   @Override
+     public List <Valoracion> findValoByIdviaje(int idv){
+          try {
+            Query query =em.createNamedQuery("Valoracion.findByIdviaje");
+    query.setParameter("idmes",idv);
     return query.getResultList();
         } catch (Exception e) {
             throw e;
+        }     
+    
+    
+    
 }
+             
+  
     
-    }
-    
-
-    
-    @Override
-    public  Opinion opi(int cod){
- Opinion opi;
+      @Override
+    public  Valoracion vali(int cod){
+ Valoracion valy;
     
        try {
-            Query query =em.createNamedQuery("Opinion.findByCodigo");
+            Query query =em.createNamedQuery("Valoracion.findByCodigo");
     query.setParameter("codigo",cod);
-   List<Opinion> lista= query.getResultList();
+   List<Valoracion> lista= query.getResultList();
               if(!lista.isEmpty()){
-           opi= lista.get(0);
-           return opi;
+          valy= lista.get(0);
+           return valy;
            }
       } catch (Exception e) {
             throw e;
@@ -68,26 +69,27 @@ public class OpinionFacade extends AbstractFacade<Opinion> implements OpinionFac
     }       
     
     @Override
-    public int codOp (int idv, int idper){
-        Integer  cop=0;
+    public int codVal (int idv, int idper){
+        int  cva=0;
      try {
-            Query query =em.createNamedQuery("Opinion.findCByIdviajeP");
+            Query query =em.createNamedQuery("Valoracion.findCByIdviajeP");
     query.setParameter("idviaje",idv);
     query.setParameter("idpersona",idper);
-   List<Opinion> lista= query.getResultList();
+   List<Valoracion> lista= query.getResultList();
            if(!lista.isEmpty()){
          
-        cop = lista.get(0).getCodigo();
+                cva = lista.get(0).getCodigo();
          
-           return cop;
+           return cva;
            }
       } catch (Exception e) {
             throw e;
            
         }
-     return cop;
-    }
-           
-   
+     return cva;
+    }  
+    
+    
+    
     
 }

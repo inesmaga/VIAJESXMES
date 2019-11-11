@@ -32,7 +32,7 @@ public class AgendaFacade extends AbstractFacade<Agenda> implements AgendaFacade
     }
     
     @Override
-    public List <Agenda>  findViajGuard(int idmes, int idpers,  String est){
+   public List <Agenda>  findViajGuard(int idmes, int idpers,  String est){
  String consulta;
         try {
          consulta ="SELECT a.nameviaje FROM Agenda a WHERE  a.idmes=?1 and a.idpersona=?2 a.estado=?3";

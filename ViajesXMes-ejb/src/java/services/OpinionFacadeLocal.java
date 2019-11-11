@@ -32,12 +32,10 @@ public interface OpinionFacadeLocal {
     
     List <Opinion> findByIdviaje(int idv);
     
-    List<Opinion>cop(int idv, int idper); 
+    Opinion opi(int cod);
     
-   List <Opinion> findValoByIdviaje(int idv) ;
-   
-   int findValorByIdviajeP(int idv, int idper);
-   
+    
+    
    int codOp (int idv, int idper);
     
 }

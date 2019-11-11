@@ -15,7 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -35,7 +36,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Agenda.findByEstado", query = "SELECT a FROM Agenda a WHERE a.estado = :estado")
     , @NamedQuery(name = "Agenda.findByValorado", query = "SELECT a FROM Agenda a WHERE a.valorado = :valorado")
     , @NamedQuery(name = "Agenda.findByOpinado", query = "SELECT a FROM Agenda a WHERE a.opinado = :opinado")
-    , @NamedQuery(name = "Agenda.findByIdopinion", query = "SELECT a FROM Agenda a WHERE a.idopinion = :idopinion")})
+    , @NamedQuery(name = "Agenda.findByIdopinion", query = "SELECT a FROM Agenda a WHERE a.idopinion = :idopinion")
+    , @NamedQuery(name = "Agenda.findByIdvalorac", query = "SELECT a FROM Agenda a WHERE a.idvalorac = :idvalorac")})
 public class Agenda implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -45,39 +47,43 @@ public class Agenda implements Serializable {
     @Column(name = "codigo")
     private Integer codigo;
     @Basic(optional = false)
-  
+    @NotNull
     @Column(name = "idmes")
     private int idmes;
     @Basic(optional = false)
- 
+    @NotNull
     @Column(name = "idpersona")
     private int idpersona;
     @Basic(optional = false)
-   
+    @NotNull
     @Column(name = "idviaje")
     private int idviaje;
     @Basic(optional = false)
-
-    
+    @NotNull
+    @Size(min = 1, max = 200)
     @Column(name = "nameviaje")
     private String nameviaje;
     @Basic(optional = false)
- 
-
+    @NotNull
+    @Size(min = 1, max = 2)
     @Column(name = "estado")
     private String estado;
     @Basic(optional = false)
-   
+    @NotNull
     @Column(name = "valorado")
     private boolean valorado;
     @Basic(optional = false)
- 
+    @NotNull
     @Column(name = "opinado")
     private boolean opinado;
     @Basic(optional = false)
-
+    @NotNull
     @Column(name = "idopinion")
     private int idopinion;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "idvalorac")
+    private int idvalorac;
 
     public Agenda() {
     }
@@ -86,7 +92,7 @@ public class Agenda implements Serializable {
         this.codigo = codigo;
     }
 
-    public Agenda(Integer codigo, int idmes, int idpersona, int idviaje, String nameviaje, String estado, boolean valorado, boolean opinado, int idopinion) {
+    public Agenda(Integer codigo, int idmes, int idpersona, int idviaje, String nameviaje, String estado, boolean valorado, boolean opinado, int idopinion, int idvalorac) {
         this.codigo = codigo;
         this.idmes = idmes;
         this.idpersona = idpersona;
@@ -96,6 +102,7 @@ public class Agenda implements Serializable {
         this.valorado = valorado;
         this.opinado = opinado;
         this.idopinion = idopinion;
+        this.idvalorac = idvalorac;
     }
 
     public Integer getCodigo() {
@@ -168,6 +175,14 @@ public class Agenda implements Serializable {
 
     public void setIdopinion(int idopinion) {
         this.idopinion = idopinion;
+    }
+
+    public int getIdvalorac() {
+        return idvalorac;
+    }
+
+    public void setIdvalorac(int idvalorac) {
+        this.idvalorac = idvalorac;
     }
 
     @Override

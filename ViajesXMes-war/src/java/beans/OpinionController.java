@@ -113,36 +113,7 @@ public void listarOpiniones(int ivia) {
 
       
     }
-    public void regisValorac(){
-    try {
-                     
-   int eip=registro.getPers();
-     int cv=sitioController.getCodviaj();
-     tovalorac= rating.getRating1();
-    List< Opinion> op =opinionFacade.cop(cv,eip);
-       if(op.get(0)!=null){ 
- 
-
-   op.get(0).setValorac(tovalorac);
-       }
-    } catch (Exception e) {
-            throw e;
-        }
-    }
-    
-    
-    
-  public void listarValoraciones(int ivia ) {
-        try {
-              int cv=sitioController.getCodviaj();
-              int eip=registro.getPers();
-            lista = opinionFacade.findValoByIdviaje(cv);
-            
-        } catch (Exception e) {
-            //mensaje de jsf
-        }
-
-    }
+  
     
    
  

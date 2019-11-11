@@ -19,6 +19,7 @@ import services.AgendaFacadeLocal;
 import services.MesesFacadeLocal;
 import services.OpinionFacadeLocal;
 import services.PersonaFacadeLocal;
+import services.ValoracionFacadeLocal;
 import services.ViajesFacadeLocal;
 
 /**
@@ -30,6 +31,10 @@ import services.ViajesFacadeLocal;
 @SessionScoped
 public class SitioController implements Serializable {
 
+    @EJB
+    private ValoracionFacadeLocal valoracionFacade;
+
+   
     @EJB
     private OpinionFacadeLocal opinionFacade;
 
@@ -196,26 +201,7 @@ Simagenes = new ArrayList<>(plantillaController.getImagenes());
         this.codviaj = codviaj;
     }
    
-     public void  registrar() {
-        Agenda a = new Agenda();
-        int eip=registro.getPers();
-        int cm= plantillaController.getAm();
-       int iop=opinionFacade.codOp(cm, eip);
-         try { 
-      a.setIdmes(cm);
-      a.setIdpersona(eip);
-      a.setIdviaje(codviaj);
-      a.setNameviaje(DESC);
-      a.setEstado(ET);
-      a.setValorado(Boolean.FALSE);
-      a.setOpinado(Boolean.TRUE);
-      a.setIdopinion(iop);
-      agendaFacade.create(a);
-       FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Gracias" , "Su Viaje ha sido Guardado"));
-      } catch (Exception e) {
-             throw e;
-         }       
-     }     
+    
              
              
              

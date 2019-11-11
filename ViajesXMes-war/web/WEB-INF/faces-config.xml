@@ -113,4 +113,9 @@
             <to-view-id>/principal.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>agendaController</managed-bean-name>
+        <managed-bean-class>beans.AgendaController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
 </faces-config>

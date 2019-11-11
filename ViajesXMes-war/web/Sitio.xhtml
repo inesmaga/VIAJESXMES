@@ -87,7 +87,7 @@
                         <p:commandButton  id="at" icon="ui-icon-arrowthick-1-w"  value="Atrás" action="re"/>
                         <p:commandButton  id="op" icon="ui-icon-comment"  value="Opinar" onclick="PF('dlg4').show();" />
                         <p:commandButton  id="va" icon="ui-icon-star "  value="Valorar" onclick="PF('dlg5').show();"/>
-                        <p:commandButton  id="ga" icon="ui-icon-disk"  value="Guardar" action ="#{sitioController.registrar()}"/>
+                        <p:commandButton  id="ga" icon="ui-icon-disk"  value="Guardar" actionListener="#{agendaController.registrar()}"  onclick="Sitio.xhtml" update="mensaje" />
                     </h:form>
 
                     <p:dialog header="Opiniones"   widgetVar="dlg4" modal="true" showEffect="explode"  style="-moz-border-radius: 15px ; -webkit-border-radius: 15px" hideEffect="bounce"  resizable="true" height="510" width="510">
@@ -122,7 +122,7 @@
                             </p:rating>
                 </h:panelGrid> 
                              <p:column/>
-                            <p:commandButton  id="rva" icon="ui-icon-star"  value="Valorar" actionListener="#{opinionController.regisValorac()}" onclick="Sitio.xhtml" update="mensaje"/>
+                            <p:commandButton  id="rva" icon="ui-icon-star"  value="Valorar" actionListener="#{valoracionController.regisValorac()}" onclick="Sitio.xhtml" update="mensaje"/>
                         </h:form>      
                     </p:dialog>  
                 </ui:insert>

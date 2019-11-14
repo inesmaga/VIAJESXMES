@@ -30,5 +30,5 @@ public interface ViajesFacadeLocal {
 
     int count();
     
-    Viajes buscamenu(int idm);
+    Viajes buscaviajemenu(int idm);
 }

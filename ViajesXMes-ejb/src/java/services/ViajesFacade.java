@@ -32,7 +32,7 @@ public class ViajesFacade extends AbstractFacade<Viajes> implements ViajesFacade
     }
     
      @Override
-    public Viajes buscamenu(int idm) {
+    public Viajes buscaviajemenu(int idm) {
         Viajes viaje = null;
         String consulta;
         try {

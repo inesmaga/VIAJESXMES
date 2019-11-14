@@ -15,8 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -47,41 +47,39 @@ public class Agenda implements Serializable {
     @Column(name = "codigo")
     private Integer codigo;
     @Basic(optional = false)
-    @NotNull
+   
     @Column(name = "idmes")
     private int idmes;
     @Basic(optional = false)
-    @NotNull
+ 
     @Column(name = "idpersona")
     private int idpersona;
     @Basic(optional = false)
-    @NotNull
+
     @Column(name = "idviaje")
     private int idviaje;
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 200)
+
     @Column(name = "nameviaje")
     private String nameviaje;
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 2)
+
+   
     @Column(name = "estado")
     private String estado;
     @Basic(optional = false)
-    @NotNull
+
     @Column(name = "valorado")
     private boolean valorado;
     @Basic(optional = false)
-    @NotNull
+ 
     @Column(name = "opinado")
     private boolean opinado;
     @Basic(optional = false)
-    @NotNull
     @Column(name = "idopinion")
     private int idopinion;
     @Basic(optional = false)
-    @NotNull
+    
     @Column(name = "idvalorac")
     private int idvalorac;
 

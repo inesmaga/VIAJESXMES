@@ -69,7 +69,7 @@ public class OpinionFacade extends AbstractFacade<Opinion> implements OpinionFac
     
     @Override
     public int codOp (int idv, int idper){
-        Integer  cop=0;
+       int  cop=0;
      try {
             Query query =em.createNamedQuery("Opinion.findCByIdviajeP");
     query.setParameter("idviaje",idv);
@@ -79,8 +79,7 @@ public class OpinionFacade extends AbstractFacade<Opinion> implements OpinionFac
          
         cop = lista.get(0).getCodigo();
          
-           return cop;
-           }
+                  }
       } catch (Exception e) {
             throw e;
            

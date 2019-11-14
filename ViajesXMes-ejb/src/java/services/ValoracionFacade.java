@@ -34,7 +34,7 @@ public class ValoracionFacade extends AbstractFacade<Valoracion> implements Valo
      public List <Valoracion> findValoByIdviaje(int idv){
           try {
             Query query =em.createNamedQuery("Valoracion.findByIdviaje");
-    query.setParameter("idmes",idv);
+    query.setParameter("idviaje",idv);
     return query.getResultList();
         } catch (Exception e) {
             throw e;

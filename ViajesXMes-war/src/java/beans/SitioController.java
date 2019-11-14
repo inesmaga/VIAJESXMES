@@ -119,7 +119,7 @@ Simagenes = new ArrayList<>(plantillaController.getImagenes());
                 Simages.add("bangkok/" + i + ".jpeg");
             }
          //debo buscar el viaje que se corresponde con idmenu
-            ve = viajesFacade.buscamenu(7);
+            ve = viajesFacade.buscaviajemenu(7);
             if (ve != null) {
                 CLL = ve.getCll();
                 CD = ve.getCd();

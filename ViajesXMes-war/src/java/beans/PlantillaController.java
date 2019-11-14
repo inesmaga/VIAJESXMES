@@ -34,7 +34,15 @@ Meses mea;
     private int am;
        private List<Menu> lista;
        private MenuModel model;
+private String namemenu;
 
+    public String getNamemenu() {
+        return namemenu;
+    }
+
+    public void setNamemenu(String namemenu) {
+        this.namemenu = namemenu;
+    }
     
     
   public void verificarMes(){
@@ -95,7 +103,7 @@ public void listarMenus(int imes) {
                             DefaultMenuItem item = new DefaultMenuItem(i.getNombre());
                      
                          item.setUrl(i.getUrl());
-                         
+                       namemenu=m.getNombre();
                            firstSubmenu.addElement(item);
                         }
                     }
@@ -106,7 +114,7 @@ public void listarMenus(int imes) {
                 if (m.getCodigoSubmenu() == null ) {
                     DefaultMenuItem item = new DefaultMenuItem(m.getNombre());
                     item.setUrl(m.getUrl());
-                    
+                    namemenu=m.getNombre();
                    
                             model.addElement(item);
                 }

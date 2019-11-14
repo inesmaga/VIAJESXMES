@@ -87,7 +87,7 @@
                         <p:commandButton  id="at" icon="ui-icon-arrowthick-1-w"  value="Atrás" action="re"/>
                         <p:commandButton  id="op" icon="ui-icon-comment"  value="Opinar" onclick="PF('dlg4').show();" />
                         <p:commandButton  id="va" icon="ui-icon-star "  value="Valorar" onclick="PF('dlg5').show();"/>
-                        <p:commandButton  id="ga" icon="ui-icon-disk"  value="Guardar" actionListener="#{agendaController.registrar()}"  onclick="Sitio.xhtml" update="mensaje" />
+                        <p:commandButton  id="ga" icon="ui-icon-disk"  value="Guardar" actionListener="#{agendaController.registrar()}" action="re" update="mensaje" />
                     </h:form>
 
                     <p:dialog header="Opiniones"   widgetVar="dlg4" modal="true" showEffect="explode"  style="-moz-border-radius: 15px ; -webkit-border-radius: 15px" hideEffect="bounce"  resizable="true" height="510" width="510">

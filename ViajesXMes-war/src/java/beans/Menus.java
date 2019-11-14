@@ -26,7 +26,7 @@ public class Menus implements Serializable {
     private MenuFacadeLocal menuFacade;
    private List<Menu> lista;
     private MenuModel model;
-    
+    private String namemenu;
  @Inject
     private PlantillaController plantillaController;
  
@@ -35,6 +35,14 @@ public class Menus implements Serializable {
         this.listarMenus(plantillaController.getAm());
         model = new DefaultMenuModel();
         this.obteniendoMenusMes();
+    }
+
+    public String getNamemenu() {
+        return namemenu;
+    }
+
+    public void setNamemenu(String namemenu) {
+        this.namemenu = namemenu;
     }
 
     public void listarMenus(int imes) {
@@ -70,7 +78,7 @@ public class Menus implements Serializable {
                             DefaultMenuItem item = new DefaultMenuItem(i.getNombre());
                      
                          item.setUrl(i.getUrl());
-                         
+                       namemenu=i.getNombre();
                            firstSubmenu.addElement(item);
                         }
                     }
@@ -81,13 +89,27 @@ public class Menus implements Serializable {
                 if (m.getCodigoSubmenu() == null ) {
                     DefaultMenuItem item = new DefaultMenuItem(m.getNombre());
                     item.setUrl(m.getUrl());
-                   
+                                 
                    
                             model.addElement(item);
                 }
             }
         }
     }
+ public String exportDAtmenus(String name){
+  
+namemenu=name;
+ 
+return namemenu;
+
+
+}
+
+     
+     
+     
+     
+     
 
    
    

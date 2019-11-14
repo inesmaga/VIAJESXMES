@@ -58,12 +58,12 @@ private Registro registro;
         int eip=registro.getPers();
         
       int  codvi= sitioController.getCodviaj();
-      String DESC= sitioController.getDESC();
-      String ET= sitioController.getET();
+      String DESC= plantillaController.getNamemenu();
+      String ET= "G";
      int iop;
-      iop = opinionFacade.codOp(codvi, eip);
+      iop = opinionFacade.findByIdviaje(codvi).get(0).getCodigo();
      
-       int ival=valoracionFacade.codVal(codvi, eip);
+       int ival=valoracionFacade.findValoByIdviaje(codvi).get(0).getCodigo();
          try { 
       a.setIdmes(cm);
       a.setIdpersona(eip);
@@ -86,7 +86,7 @@ private Registro registro;
       }
      
       agendaFacade.create(a);
-       FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Gracias" , "Su Viaje ha sido Guardado"));
+       FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Gracias,Su Viaje ha sido Guardado","gracias"));
       } catch (Exception e) {
              throw e;
          }       

@@ -43,7 +43,18 @@ public class OpinionFacade extends AbstractFacade<Opinion> implements OpinionFac
     
     }
     
-
+ @Override
+      public List <Opinion> findOByIdviajeOP(int idv, int idp){
+        try {
+            Query query =em.createNamedQuery("Opinion.findOByIdviajeOP");
+    query.setParameter("idviaje",idv);
+    query.setParameter("idpersona",idp);
+    return query.getResultList();
+        } catch (Exception e) {
+            throw e;
+}
+    
+    }
     
     @Override
     public  Opinion opi(int cod){

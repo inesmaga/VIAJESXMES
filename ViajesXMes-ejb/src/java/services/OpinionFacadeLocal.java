@@ -34,7 +34,7 @@ public interface OpinionFacadeLocal {
     
     Opinion opi(int cod);
     
-    
+    List <Opinion> findOByIdviajeOP(int idv, int idp);
     
    int codOp (int idv, int idper);
     

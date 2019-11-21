@@ -34,6 +34,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Opinion.findByCodigo", query = "SELECT o FROM Opinion o WHERE o.codigo = :codigo")
     , @NamedQuery(name = "Opinion.findCByIdviajeP", query = "SELECT o.codigo FROM Opinion o WHERE o.idviaje = :idviaje and o.idpersona = :idpersona")
     , @NamedQuery(name = "Opinion.findByIdviaje", query = "SELECT o FROM Opinion o WHERE o.idviaje = :idviaje")
+    , @NamedQuery(name = "Opinion.findOByIdviajeOP", query = "SELECT o.opinion FROM Opinion o WHERE o.idviaje = :idviaje and o.idpersona != :idpersona")
     , @NamedQuery(name = "Opinion.findByIdpersona", query = "SELECT o FROM Opinion o WHERE o.idpersona = :idpersona")
     , @NamedQuery(name = "Opinion.findByFechaop", query = "SELECT o FROM Opinion o WHERE o.fechaop = :fechaop")})
 public class Opinion implements Serializable {

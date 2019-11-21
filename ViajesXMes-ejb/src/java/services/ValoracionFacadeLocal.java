@@ -35,5 +35,7 @@ public interface ValoracionFacadeLocal {
      Valoracion vali(int cod);
      
      List <Valoracion> findValoByIdviaje(int idv);
+     
+     int ratingAverage(int idv);
     
 }

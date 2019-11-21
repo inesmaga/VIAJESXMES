@@ -93,8 +93,17 @@
                     <p:dialog header="Opiniones"   widgetVar="dlg4" modal="true" showEffect="explode"  style="-moz-border-radius: 15px ; -webkit-border-radius: 15px" hideEffect="bounce"  resizable="true" height="510" width="510">
                         <p:messages  id="mensaje" autoUpdate="true"    showDetail="true"/>
                         <h:form>
-                            <p:fieldset legend="Opiniones◄╝Otros Usuarios" toggleable="true" toggleSpeed="500" collapsed="true">
-
+                            <p:fieldset legend="Opiniones ◄╝Otros Usuarios" toggleable="true" toggleSpeed="500" collapsed="true">
+                              
+    <h:form id="form6">
+        <p:dataList value="#{opinionController.listarOpinionesOU()}" var="oou" type="ordered">
+        <f:facet name="header">
+            Opiniones Otros Usuarios
+        </f:facet>
+       #{oou}
+    </p:dataList>
+ </h:form>
+    
                             </p:fieldset>   
                         </h:form>
                         <h:form>
@@ -115,7 +124,8 @@
                         <h:form id="fsbv">
                <h:panelGrid columns="2" cellpadding="6">
                                 <h:outputText value="Valoración Promedio:" />
-                                <p:rating value="#{rating.rating2}" readonly="true" />  
+                                <p:rating value="#{rating.rating2}" styleClass="ui-icon-star"  valueChangeListener="#{rating.obtenerAvg()}" readonly="true" >
+                               </p:rating> 
                                 <h:outputText value="Tu Valoración:" />
                                 <p:rating value="#{rating.rating1}"  >
                               

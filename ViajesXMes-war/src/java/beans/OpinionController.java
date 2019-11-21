@@ -5,7 +5,7 @@ package beans;
 
 
 
-import static com.sun.org.apache.xerces.internal.impl.xpath.regex.CaseInsensitiveMap.get;
+
 import entities.Opinion;
 
 import java.io.Serializable;
@@ -47,12 +47,14 @@ public class OpinionController implements Serializable{
     
    Opinion op = new Opinion();
   
+
+  
    }
    
    private List<Opinion> lista;
-   
+   private List<Opinion> listaOT;
    private String topinion;
-private int tovalorac ;
+
     public String getTopinion() {
         return topinion;
     }
@@ -61,34 +63,34 @@ private int tovalorac ;
         this.topinion = topinion;
     }
 
-    public int getTovalorac() {
-        return tovalorac;
-    }
-
-    public void setTovalorac(int tovalorac) {
-        this.tovalorac = tovalorac;
-    }
+ 
    
-    
-public void listarOpiniones(int ivia) {
-        try {
+    public List<Opinion> listarOpinionesOU() {
+        
+            int eip=registro.getPers();
               int cv=sitioController.getCodviaj();
-            lista = opinionFacade.findByIdviaje(cv);
+            listaOT =opinionFacade.findOByIdviajeOP(cv, eip);
             
-        } catch (Exception e) {
-            //mensaje de jsf
-        }
+return listaOT;
+    }
 
+    public List<Opinion> getLista() {
+        return lista;
     }
 
     public void setLista(List<Opinion> lista) {
         this.lista = lista;
     }
 
-    public List<Opinion> getLista() {
-        return lista;
+    public List<Opinion> getListaOT() {
+        return listaOT;
     }
-    
+
+    public void setListaOT(List<Opinion> listaOT) {
+        this.listaOT = listaOT;
+    }
+
+  
    
     public void regisOpinion(){
         

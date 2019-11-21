@@ -29,218 +29,206 @@
             <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
                  <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(1)}" reflow="true" rows="10" paginator="true">
     <p:column headerText="Viajes Guardados" >
-        <h:outputText value="#{viaj.nameviaje}" />
+        <h:outputText value="#{viaj}" />
     </p:column>
  
     <p:column headerText="Realizado">
         <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+            <p:ajax listener="#{tviaje.addMessage}" />
         </p:inputSwitch>
-        <h:outputText value="Value 2: #{tviaje.value2}" />
+       
     </p:column>
    </p:dataTable>
 
             </h:panelGrid>
         </p:tab>
         <p:tab title="Febrero">
-            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-               
-                  
-<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
-    <p:column headerText="Viajes Guardados">
-        <h:outputText value="#{car.id}" />
+       <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(2)}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados" >
+        <h:outputText value="#{viaj}" />
     </p:column>
  
     <p:column headerText="Realizado">
-       <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" />
         </p:inputSwitch>
-        <h:outputText value="Value 2: #{tviaje.value2}" />
+       
     </p:column>
    </p:dataTable>
+
             </h:panelGrid>
         </p:tab>
         <p:tab title="Marzo">
-            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-              
-<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
-    <p:column headerText="Viajes Guardados">
-        <h:outputText value="#{car.id}" />
+                         
+      <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(3)}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados" >
+        <h:outputText value="#{viaj}" />
     </p:column>
  
     <p:column headerText="Realizado">
-       <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" />
         </p:inputSwitch>
-        <h:outputText value="Value 2: #{tviaje.value2}" />
+       
     </p:column>
    </p:dataTable>
+
             </h:panelGrid>
+        
         </p:tab>
            <p:tab title="Abril">                    
-            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                
-                     
-<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
-    <p:column headerText="Viajes Guardados">
-        <h:outputText value="#{car.id}" />
+                  <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(4)}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados" >
+        <h:outputText value="#{viaj}" />
     </p:column>
  
     <p:column headerText="Realizado">
-       <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" />
         </p:inputSwitch>
-        <h:outputText value="Value 2: #{tviaje.value2}" />
+       
     </p:column>
    </p:dataTable>
+
             </h:panelGrid>
         </p:tab>
         <p:tab title="Mayo">
-            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-               
-                      
-<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
-    <p:column headerText="Viajes Guardados">
-        <h:outputText value="#{car.id}" />
+                  <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(5)}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados" >
+        <h:outputText value="#{viaj}" />
     </p:column>
  
     <p:column headerText="Realizado">
-       <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+        <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" />
         </p:inputSwitch>
-        <h:outputText value="Value 2: #{tviaje.value2}" />
+       
     </p:column>
    </p:dataTable>
+
             </h:panelGrid>
         </p:tab>
         <p:tab title="Junio">
-            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-               
-                     
-<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
-    <p:column headerText="Viajes Guardados">
-        <h:outputText value="#{car.id}" />
+                <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(6)}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados" >
+        <h:outputText value="#{viaj}" />
     </p:column>
  
     <p:column headerText="Realizado">
         <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+            <p:ajax listener="#{tviaje.addMessage}" />
         </p:inputSwitch>
-        <h:outputText value="Value 2: #{tviaje.value2}" />
+       
     </p:column>
    </p:dataTable>
+
             </h:panelGrid>
         </p:tab>
            <p:tab title="Julio">                    
-            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                
-                    
-<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
-    <p:column headerText="Viajes Guardados">
-        <h:outputText value="#{car.id}" />
-    </p:column>
- 
-    <p:column headerText="Realizado">
-      <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
-        </p:inputSwitch>
-        <h:outputText value="Value 2: #{tviaje.value2}" />
-    </p:column>
-   </p:dataTable>
-            </h:panelGrid>
-        </p:tab>
-        <p:tab title="Agosto">
-            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                
-                    
-<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
-    <p:column headerText="Viajes Guardados">
-        <h:outputText value="#{car.id}" />
+                  <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(7)}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados" >
+        <h:outputText value="#{viaj}" />
     </p:column>
  
     <p:column headerText="Realizado">
         <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+            <p:ajax listener="#{tviaje.addMessage}" />
         </p:inputSwitch>
-        <p:dialog header="Values" modal="true" resizable="false" showEffect="fade" widgetVar="dlg">
-        <h:panelGrid columns="1" id="display">
-            <h:outputText value="Value 2: #{tviaje.value2}" />
-        </h:panelGrid>
-        </p:dialog>
+       
     </p:column>
    </p:dataTable>
+
+            </h:panelGrid>
+              </p:tab>  
+        <p:tab title="Agosto">
+                <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(8)}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados" >
+        <h:outputText value="#{viaj}" />
+    </p:column>
+ 
+    <p:column headerText="Realizado">
+        <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" />
+        </p:inputSwitch>
+       
+    </p:column>
+   </p:dataTable>
+
             </h:panelGrid>
         </p:tab>
         <p:tab title="Septiembre">
-            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;">
-               
-                     
-<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
-    <p:column headerText="Viajes Guardados">
-        <h:outputText value="#{car.id}" />
+               <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(9)}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados" >
+        <h:outputText value="#{viaj}" />
     </p:column>
  
     <p:column headerText="Realizado">
         <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+            <p:ajax listener="#{tviaje.addMessage}" />
         </p:inputSwitch>
-        <h:outputText value="Value 2: #{tviaje.value2}" />
+       
     </p:column>
    </p:dataTable>
+
             </h:panelGrid>
         </p:tab>
            <p:tab title="Octubre">                    
-            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                
-                     
-<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
-    <p:column headerText="Viajes Guardados">
-        <h:outputText value="#{car.id}" />
+              <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(10)}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados" >
+        <h:outputText value="#{viaj}" />
     </p:column>
  
-    <p:column headerText="Realizado">
-        <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+    <p:column headerText="Realizado" style="align-items: center">
+        <p:inputSwitch value="#{tviaje.value2}" >
+            <p:ajax listener="#{tviaje.addMessage}" />
         </p:inputSwitch>
-        <h:outputText value="Value 2: #{tviaje.value2}" />
+       
     </p:column>
    </p:dataTable>
+
             </h:panelGrid>
         </p:tab>
         <p:tab title="Noviembre">
-            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-               
-                     
-<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
-    <p:column headerText="Viajes Guardados">
-        <h:outputText value="#{car.id}" />
-    </p:column>
- 
-    <p:column headerText="Realizado">
-      <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
-        </p:inputSwitch>
-        <h:outputText value="Value 2: #{tviaje.value2}" />
-    </p:column>
-   </p:dataTable>
-            </h:panelGrid>
-        </p:tab>
-        <p:tab title="Diciembre">
-            <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-               
-                     
-<p:dataTable var="viaj" value="#{dtBasicView.cars}" reflow="true" rows="10" paginator="true">
-    <p:column headerText="Viajes Guardados">
-        <h:outputText value="#{car.id}" />
+               <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(11)}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados" >
+        <h:outputText value="#{viaj}" />
     </p:column>
  
     <p:column headerText="Realizado">
         <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" update="msg" />
+            <p:ajax listener="#{tviaje.addMessage}" />
         </p:inputSwitch>
-        <h:outputText value="Value 2: #{tviaje.value2}" />
+       
     </p:column>
    </p:dataTable>
+
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Diciembre">
+                  <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
+                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(12)}" reflow="true" rows="10" paginator="true">
+    <p:column headerText="Viajes Guardados" >
+        <h:outputText value="#{viaj}" />
+    </p:column>
+ 
+    <p:column headerText="Realizado">
+        <p:inputSwitch value="#{tviaje.value2}">
+            <p:ajax listener="#{tviaje.addMessage}" />
+        </p:inputSwitch>
+       
+    </p:column>
+   </p:dataTable>
+
             </h:panelGrid>
         </p:tab>
     </p:tabView>

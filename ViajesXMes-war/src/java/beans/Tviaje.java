@@ -68,9 +68,9 @@ private SitioController sitioController;
     
     public List<Agenda>obtenerLViajesG(int idmes ){
         int idpers=registro.getPers();
-         codm=plantillaController.getAm();
+        
      try {
-   Ltviaje = agendaFacade.findViajGuard(codm, idpers, "G");
+   Ltviaje = agendaFacade.findViajGuard(idmes, idpers, "G");
         } catch (Exception e) {
             //mensaje de jsf
         }

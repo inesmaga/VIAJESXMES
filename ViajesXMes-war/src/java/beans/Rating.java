@@ -16,6 +16,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import org.primefaces.event.RateEvent;
 import services.OpinionFacadeLocal;
+import services.ValoracionFacadeLocal;
 
 /**
  *
@@ -25,8 +26,16 @@ import services.OpinionFacadeLocal;
 @SessionScoped
 public class Rating  implements Serializable{
 
+    @EJB
+    private ValoracionFacadeLocal valoracionFacade;
+
    private Integer rating1;   
     private Integer rating2; 
+   private  Integer ViaAVG;
+   @Inject 
+   private SitioController sitioController;
+
+   
 
     public Integer getRating1() {
         return rating1;
@@ -44,7 +53,25 @@ public class Rating  implements Serializable{
         this.rating2 = rating2;
     }
 
-  
+    public Integer getViaAVG() {
+        return ViaAVG;
+    }
+
+    public void setViaAVG(Integer ViaAVG) {
+        this.ViaAVG = ViaAVG;
+    }
+    
+    
+    
+   public void ObtenerAvg() {
+ 
+   int cv=sitioController.getCodviaj();
+   
+   ViaAVG= valoracionFacade.ratingAverage(cv);
+  this.setRating2(ViaAVG);
+
+ 
+   }
 
 
 

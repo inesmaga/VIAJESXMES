@@ -46,6 +46,7 @@ public class ValoracionController implements Serializable{
     private List<Valoracion> lista;
    private int tovalorac ;
 
+
     public int getTovalorac() {
         return tovalorac;
     }
@@ -53,8 +54,9 @@ public class ValoracionController implements Serializable{
     public void setTovalorac(int tovalorac) {
         this.tovalorac = tovalorac;
     }
-    
-    
+
+   
+  
     
     
     

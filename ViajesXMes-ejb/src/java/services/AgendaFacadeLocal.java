@@ -32,4 +32,6 @@ public interface AgendaFacadeLocal {
     
     List <Agenda>  findViajGuard(int idmes, int idpers,  String est);
     
+ void CEstnameVij(int idpers,int idmes,String nv);
+    
 }

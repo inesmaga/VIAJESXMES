@@ -47,4 +47,29 @@ public class AgendaFacade extends AbstractFacade<Agenda> implements AgendaFacade
             throw e;
 }
     }
+   
+    @Override
+   public void CEstnameVij(int idpers,int idmes,String nv){
+       List <Agenda> namev = null ;
+       String consulta;
+       try {
+              consulta ="UPDATE  Agenda a  SET a.estado='R' WHERE  a.idmes=?1 and a.idpersona=?2 and a.nameviaje=?3";
+             Query query = em.createQuery(consulta);
+            query.setParameter(1, idmes);
+            query.setParameter(2, idpers);
+             query.setParameter(3, nv);  
+            query.executeUpdate();
+   
+           
+        } catch (Exception e) {
+            throw e;
+        }
+       
+   }
+   
+   
+   
+   
+   
+   
 }

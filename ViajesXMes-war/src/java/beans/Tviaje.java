@@ -11,6 +11,7 @@ import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import org.primefaces.event.SelectEvent;
 import services.AgendaFacadeLocal;
 
 /**
@@ -42,6 +43,7 @@ private SitioController sitioController;
     
  private boolean value2;
  private List<Agenda>Ltviaje;
+ private List<Agenda>LtviajeR;
  private int codm;
     public boolean isValue2() {
         return value2;
@@ -50,9 +52,19 @@ private SitioController sitioController;
     public void setValue2(boolean value2) {
         this.value2 = value2;
     }
+     
+    public void cambioEst(int idm,String namviaj ){
+      int eip=registro.getPers();
       
+       
+ agendaFacade.CEstnameVij(eip,idm,namviaj);
+    
+    this.addMessage();
+    }
+    
+       
     public void addMessage() {
-        String summary = value2 ? "Checked" : "Unchecked";
+        String summary = value2 ?  "Realizado" : "Guardado" ;
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(summary));
     }
   public int getCodm() {

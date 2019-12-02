@@ -8,6 +8,7 @@ package beans;
 import entities.Opinion;
 import java.io.Serializable;
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
@@ -35,8 +36,10 @@ public class Rating  implements Serializable{
    @Inject 
    private SitioController sitioController;
 
-   
-
+   @PostConstruct
+    public void init() {
+     this.ObtenerAvg();  
+    }
     public Integer getRating1() {
         return rating1;
     }

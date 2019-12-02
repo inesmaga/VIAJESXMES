@@ -124,12 +124,12 @@
                         <h:form id="fsbv">
                <h:panelGrid columns="2" cellpadding="6">
                                 <h:outputText value="Valoración Promedio:" />
-                                <p:rating value="#{rating.rating2}" styleClass="ui-icon-star"  valueChangeListener="#{rating.obtenerAvg()}" readonly="true" >
-                               </p:rating> 
+                                  <p:rating value="#{rating.rating2}"  >
+                                </p:rating>             
+                                <h:outputText value="#{rating.rating2}" />
                                 <h:outputText value="Tu Valoración:" />
                                 <p:rating value="#{rating.rating1}"  >
-                              
-                            </p:rating>
+                                </p:rating>
                 </h:panelGrid> 
                              <p:column/>
                             <p:commandButton  id="rva" icon="ui-icon-star"  value="Valorar" actionListener="#{valoracionController.regisValorac()}" onclick="Sitio.xhtml" update="mensaje"/>

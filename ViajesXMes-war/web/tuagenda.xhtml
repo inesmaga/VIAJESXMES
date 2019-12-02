@@ -22,7 +22,7 @@
         <div class="center" > 
         <p:panelGrid  id="pg2" layout="grid" columns="5"   style="height: 528px; margin-left: 5%; margin-top: 1%; width: 95%; -moz-border-radius: 15px ;-webkit-border-radius: 15px ;">    
          <h:form id="form" style="height: 523px; margin-bottom: 2%;">
-         
+            
        <p:tabView orientation="left" >
         <p:tab title="Enero"> 
             
@@ -32,14 +32,15 @@
         <h:outputText value="#{viaj}" />
     </p:column>
  
-    <p:column headerText="Realizado">
-        <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" />
+    <p:column headerText="Estado del Viaje :">
+         <p:growl id="msg" />
+         <p:inputSwitch value="#{tviaje.value2}" >
+             <p:ajax  listener="#{tviaje.cambioEst(1,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
    </p:dataTable>
-
+ 
             </h:panelGrid>
         </p:tab>
         <p:tab title="Febrero">
@@ -50,8 +51,9 @@
     </p:column>
  
     <p:column headerText="Realizado">
-        <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" />
+       <p:growl id="msg" />
+         <p:inputSwitch value="#{tviaje.value2}" >
+             <p:ajax  listener="#{tviaje.cambioEst(2,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -68,8 +70,9 @@
     </p:column>
  
     <p:column headerText="Realizado">
-        <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" />
+      <p:growl id="msg" />
+         <p:inputSwitch value="#{tviaje.value2}" >
+             <p:ajax  listener="#{tviaje.cambioEst(3,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -86,8 +89,9 @@
     </p:column>
  
     <p:column headerText="Realizado">
-        <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" />
+        <p:growl id="msg" />
+         <p:inputSwitch value="#{tviaje.value2}" >
+             <p:ajax  listener="#{tviaje.cambioEst(4,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -103,8 +107,9 @@
     </p:column>
  
     <p:column headerText="Realizado">
-        <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" />
+       <p:growl id="msg" />
+         <p:inputSwitch value="#{tviaje.value2}" >
+             <p:ajax  listener="#{tviaje.cambioEst(5,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -120,8 +125,9 @@
     </p:column>
  
     <p:column headerText="Realizado">
-        <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" />
+      <p:growl id="msg" />
+         <p:inputSwitch value="#{tviaje.value2}" >
+             <p:ajax  listener="#{tviaje.cambioEst(6,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -137,8 +143,9 @@
     </p:column>
  
     <p:column headerText="Realizado">
-        <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" />
+        <p:growl id="msg" />
+         <p:inputSwitch value="#{tviaje.value2}" >
+             <p:ajax  listener="#{tviaje.cambioEst(7,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -154,8 +161,9 @@
     </p:column>
  
     <p:column headerText="Realizado">
-        <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" />
+        <p:growl id="msg" />
+         <p:inputSwitch value="#{tviaje.value2}" >
+             <p:ajax  listener="#{tviaje.cambioEst(8,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -171,8 +179,9 @@
     </p:column>
  
     <p:column headerText="Realizado">
-        <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" />
+       <p:growl id="msg" />
+         <p:inputSwitch value="#{tviaje.value2}" >
+             <p:ajax  listener="#{tviaje.cambioEst(9,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -188,8 +197,9 @@
     </p:column>
  
     <p:column headerText="Realizado" style="align-items: center">
-        <p:inputSwitch value="#{tviaje.value2}" >
-            <p:ajax listener="#{tviaje.addMessage}" />
+      <p:growl id="msg" />
+         <p:inputSwitch value="#{tviaje.value2}" >
+             <p:ajax  listener="#{tviaje.cambioEst(10,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -205,8 +215,9 @@
     </p:column>
  
     <p:column headerText="Realizado">
-        <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" />
+       <p:growl id="msg" />
+         <p:inputSwitch value="#{tviaje.value2}" >
+             <p:ajax  listener="#{tviaje.cambioEst(11,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -222,8 +233,9 @@
     </p:column>
  
     <p:column headerText="Realizado">
-        <p:inputSwitch value="#{tviaje.value2}">
-            <p:ajax listener="#{tviaje.addMessage}" />
+       <p:growl id="msg" />
+         <p:inputSwitch value="#{tviaje.value2}" >
+             <p:ajax  listener="#{tviaje.cambioEst(12,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>

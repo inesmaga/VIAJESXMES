@@ -77,7 +77,7 @@ public class Menus implements Serializable {
                         if (submenu.getCodigo().equals(m.getCodigo())) {
                             DefaultMenuItem item = new DefaultMenuItem(i.getNombre());
                      
-                         item.setUrl(i.getUrl());
+                       item.setUrl(i.getUrl());
                        namemenu=i.getNombre();
                            firstSubmenu.addElement(item);
                         }
@@ -99,18 +99,18 @@ public class Menus implements Serializable {
  public String exportDAtmenus(String name){
   
 namemenu=name;
- 
+
 return namemenu;
 
+     
+  }
+  
 
-}
-
-     
-     
-     
+ 
      
      
 
+   
    
    
 }

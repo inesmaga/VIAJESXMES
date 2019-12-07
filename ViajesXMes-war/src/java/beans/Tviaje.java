@@ -55,18 +55,15 @@ private SitioController sitioController;
      
     public void cambioEst(int idm,String namviaj ){
       int eip=registro.getPers();
+          
+   agendaFacade.CEstnameVij(eip,idm,namviaj);
       
-       
- agendaFacade.CEstnameVij(eip,idm,namviaj);
-    
-    this.addMessage();
+     FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Gracias" , "Su Viaje ha sido Actualizado"));
     }
     
        
-    public void addMessage() {
-        String summary = value2 ?  "Realizado" : "Guardado" ;
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(summary));
-    }
+    
+    
   public int getCodm() {
         return codm;
     }

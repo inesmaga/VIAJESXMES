@@ -102,8 +102,8 @@ public void listarMenus(int imes) {
                         if (submenu.getCodigo().equals(m.getCodigo())) {
                             DefaultMenuItem item = new DefaultMenuItem(i.getNombre());
                      
-                         item.setUrl(i.getUrl());
-                       namemenu=m.getNombre();
+                            item.setUrl(i.getUrl());
+                       namemenu=i.getNombre();
                            firstSubmenu.addElement(item);
                         }
                     }
@@ -113,8 +113,7 @@ public void listarMenus(int imes) {
 
                 if (m.getCodigoSubmenu() == null ) {
                     DefaultMenuItem item = new DefaultMenuItem(m.getNombre());
-                    item.setUrl(m.getUrl());
-                    namemenu=m.getNombre();
+                    
                    
                             model.addElement(item);
                 }

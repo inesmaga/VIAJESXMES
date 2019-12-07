@@ -31,4 +31,8 @@ public interface MenuFacadeLocal {
     int count();
     
      List <Menu> findByIdmes(int idm);
+     
+     List <Menu> findByUrl(String url);
+     
+     
 }

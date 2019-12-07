@@ -16,7 +16,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -34,6 +33,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Agenda.findByIdviaje", query = "SELECT a FROM Agenda a WHERE a.idviaje = :idviaje")
     , @NamedQuery(name = "Agenda.findByNameviaje", query = "SELECT a FROM Agenda a WHERE a.nameviaje = :nameviaje")
     , @NamedQuery(name = "Agenda.findByEstado", query = "SELECT a FROM Agenda a WHERE a.estado = :estado")
+    , @NamedQuery(name = "Agenda.findByFavorito", query = "SELECT a FROM Agenda a WHERE a.favorito = :favorito")
     , @NamedQuery(name = "Agenda.findByValorado", query = "SELECT a FROM Agenda a WHERE a.valorado = :valorado")
     , @NamedQuery(name = "Agenda.findByOpinado", query = "SELECT a FROM Agenda a WHERE a.opinado = :opinado")
     , @NamedQuery(name = "Agenda.findByIdopinion", query = "SELECT a FROM Agenda a WHERE a.idopinion = :idopinion")
@@ -47,11 +47,11 @@ public class Agenda implements Serializable {
     @Column(name = "codigo")
     private Integer codigo;
     @Basic(optional = false)
-   
+
     @Column(name = "idmes")
     private int idmes;
     @Basic(optional = false)
- 
+
     @Column(name = "idpersona")
     private int idpersona;
     @Basic(optional = false)
@@ -60,26 +60,31 @@ public class Agenda implements Serializable {
     private int idviaje;
     @Basic(optional = false)
 
+
     @Column(name = "nameviaje")
     private String nameviaje;
     @Basic(optional = false)
-
    
     @Column(name = "estado")
     private String estado;
     @Basic(optional = false)
 
+    @Column(name = "favorito")
+    private boolean favorito;
+    @Basic(optional = false)
+
     @Column(name = "valorado")
     private boolean valorado;
     @Basic(optional = false)
- 
+    
     @Column(name = "opinado")
     private boolean opinado;
     @Basic(optional = false)
+
     @Column(name = "idopinion")
     private int idopinion;
     @Basic(optional = false)
-    
+   
     @Column(name = "idvalorac")
     private int idvalorac;
 
@@ -90,13 +95,14 @@ public class Agenda implements Serializable {
         this.codigo = codigo;
     }
 
-    public Agenda(Integer codigo, int idmes, int idpersona, int idviaje, String nameviaje, String estado, boolean valorado, boolean opinado, int idopinion, int idvalorac) {
+    public Agenda(Integer codigo, int idmes, int idpersona, int idviaje, String nameviaje, String estado, boolean favorito, boolean valorado, boolean opinado, int idopinion, int idvalorac) {
         this.codigo = codigo;
         this.idmes = idmes;
         this.idpersona = idpersona;
         this.idviaje = idviaje;
         this.nameviaje = nameviaje;
         this.estado = estado;
+        this.favorito = favorito;
         this.valorado = valorado;
         this.opinado = opinado;
         this.idopinion = idopinion;
@@ -149,6 +155,14 @@ public class Agenda implements Serializable {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public boolean getFavorito() {
+        return favorito;
+    }
+
+    public void setFavorito(boolean favorito) {
+        this.favorito = favorito;
     }
 
     public boolean getValorado() {

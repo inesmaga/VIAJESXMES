@@ -39,7 +39,23 @@ public class MenuFacade extends AbstractFacade<Menu> implements MenuFacadeLocal 
     return query.getResultList();
         } catch (Exception e) {
             throw e;
-        }
+}
     
     }
+    
+   @Override
+     public List <Menu> findByUrl(String url){
+        try {
+            Query query =em.createNamedQuery("Menu.findByUrl");
+    query.setParameter("url",url);
+    return query.getResultList();
+    
+        } catch (Exception e) {
+            throw e;
+        }
+    
+    }  
+    
+     
+     
 }

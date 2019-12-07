@@ -77,7 +77,7 @@ public class ValoracionFacade extends AbstractFacade<Valoracion> implements Valo
    List<Valoracion> lista= query.getResultList();
            if(!lista.isEmpty()){
          
-                cva = lista.get(0).getCodigo();
+                cva = lista.get(0).getCodigo().intValue();
          
            return cva;
            }
@@ -93,7 +93,7 @@ public class ValoracionFacade extends AbstractFacade<Valoracion> implements Valo
           int ratingAvg;
        String consulta;
         try {
-            consulta ="SELECT AVG(valoracion) FROM Valoracion v WHERE  v.idviaje=?1 ";
+            consulta ="SELECT AVG(v.valorac) FROM Valoracion v WHERE  v.idviaje=?1 ";
            Query query = em.createQuery(consulta);
             query.setParameter(1, idv); 
               List<Valoracion> lista= query.getResultList();

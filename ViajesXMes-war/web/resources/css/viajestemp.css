@@ -228,8 +228,11 @@ bottom: 0;
 }
 #fsbtn{
   margin-top: 6px;  
-   margin-left: 20%; 
-   margin-right: 10%; 
+   margin-left: 8%; 
+   margin-right: 8%; 
+}
+#fv{
+    display: block;
 }
 #at{
     display: block;

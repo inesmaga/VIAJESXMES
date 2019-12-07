@@ -23,7 +23,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -69,22 +68,22 @@ public class Persona implements Serializable {
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Basic(optional = false)
  
-    @Size(min = 1, max = 50)
+  
     @Column(name = "email")
     private String email;
     @Basic(optional = false)
   
-    @Size(min = 1, max = 10)
+  
     @Column(name = "username")
     private String username;
     @Basic(optional = false)
  
-    @Size(min = 1, max = 15)
+    
     @Column(name = "clave")
     private String clave;
     @Basic(optional = false)
 
-    @Size(min = 1, max = 2)
+  
     @Column(name = "tipo")
     private String tipo;
    

@@ -16,6 +16,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -65,6 +66,7 @@ public class Agenda implements Serializable {
     private String nameviaje;
     @Basic(optional = false)
    
+   
     @Column(name = "estado")
     private String estado;
     @Basic(optional = false)
@@ -80,7 +82,6 @@ public class Agenda implements Serializable {
     @Column(name = "opinado")
     private boolean opinado;
     @Basic(optional = false)
-
     @Column(name = "idopinion")
     private int idopinion;
     @Basic(optional = false)

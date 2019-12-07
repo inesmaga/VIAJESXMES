@@ -21,9 +21,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -45,47 +43,46 @@ import javax.xml.bind.annotation.XmlTransient;
 public class Viajes implements Serializable {
 
     @Basic(optional = false)
-    @NotNull
+ 
     @Lob
-    @Size(min = 1, max = 16777215)
+  
     @Column(name = "Descripcion")
     private String descripcion;
     @Basic(optional = false)
-    @NotNull
+    
     @Lob
-    @Size(min = 1, max = 16777215)
+   
     @Column(name = "CLL")
     private String cll;
     @Basic(optional = false)
-    @NotNull  
+  
     @Lob
-    @Size(min = 1, max = 16777215)
+  
     @Column(name = "CD")
     private String cd;
     @Basic(optional = false)
-    @NotNull   
+   
     @Lob
-    @Size(min = 1, max = 16777215)
+ 
     @Column(name = "ET")
     private String et;
     @Basic(optional = false)
-    @NotNull  
+    
     @Lob
-    @Size(min = 1, max = 16777215)
+
     @Column(name = "DD")
     private String dd;
     @Basic(optional = false)
-    @NotNull   
+  
     @Lob
-    @Size(min = 1, max = 16777215)
+
     @Column(name = "DCO")
     private String dco;
     @Basic(optional = false)
-    @NotNull  
-    @Size(min = 1, max = 100)
+  
     @Column(name = "WEB")
     private String web;
-    @Size(max = 2)
+
     @Column(name = "Valorac")
     private String valorac;
 

@@ -18,9 +18,9 @@ import services.AgendaFacadeLocal;
  *
  * @author inesm
  */
-@Named(value = "tviaje")
+@Named(value = "tagenda")
 @SessionScoped
-public class Tviaje implements Serializable {
+public class Tagenda implements Serializable {
 
     @EJB
     private AgendaFacadeLocal agendaFacade;

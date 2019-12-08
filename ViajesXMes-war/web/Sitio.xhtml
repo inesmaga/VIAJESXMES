@@ -88,6 +88,7 @@
                         <p:commandButton  id="fv" icon="ui-icon-heart"  value="Favorito" actionListener="" action="re" update="mensaje" />
                         <p:commandButton  id="op" icon="ui-icon-comment"  value="Opinar" onclick="PF('dlg4').show();" />
                         <p:commandButton  id="va" icon="ui-icon-star "  value="Valorar" onclick="PF('dlg5').show();"/>
+                         <p:commandButton  id="fv" icon="ui-icon-heart"  value="Favorito" actionListener="#{agendaController.cambioFavori()}" action="re" update="mensaje" />
                         <p:commandButton  id="ga" icon="ui-icon-disk"  value="Guardar" actionListener="#{agendaController.registrar()}" action="re" update="mensaje" />
                     </h:form>
 

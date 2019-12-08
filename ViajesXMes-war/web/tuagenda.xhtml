@@ -28,16 +28,16 @@
         <p:tab title="Enero"> 
             
             <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(1)}" reflow="true" rows="10" paginator="true">
+                 <p:dataTable var="viaj" value="#{tagenda.obtenerLViajesG(1)}" reflow="true" rows="10" paginator="true">
     <p:column headerText="Viajes Guardados" >
         <h:outputText value="#{viaj}" />
     </p:column>
  
     <p:column headerText="Estado del Viaje:">
          
-        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tviaje.value2}" >
+        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tagenda.value2}" >
             
-             <p:ajax   listener="#{tviaje.cambioEst(1,viaj)}"  update="msg"/>
+             <p:ajax   listener="#{tagenda.cambioEst(1,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -47,15 +47,15 @@
         </p:tab>
         <p:tab title="Febrero">
        <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(2)}" reflow="true" rows="10" paginator="true">
+                 <p:dataTable var="viaj" value="#{tagenda.obtenerLViajesG(2)}" reflow="true" rows="10" paginator="true">
     <p:column headerText="Viajes Guardados" >
         <h:outputText value="#{viaj}" />
     </p:column>
  
     <p:column headerText="Estado del Viaje:">
          
-        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tviaje.value2}" >
-             <p:ajax  listener="#{tviaje.cambioEst(2,viaj)}"  update="msg"/>
+        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tagenda.value2}" >
+             <p:ajax  listener="#{tagenda.cambioEst(2,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -66,15 +66,15 @@
         <p:tab title="Marzo">
                          
       <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(3)}" reflow="true" rows="10" paginator="true">
+                 <p:dataTable var="viaj" value="#{tagenda.obtenerLViajesG(3)}" reflow="true" rows="10" paginator="true">
     <p:column headerText="Viajes Guardados" >
         <h:outputText value="#{viaj}" />
     </p:column>
  
      <p:column headerText="Estado del Viaje:">
          
-        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tviaje.value2}" >
-             <p:ajax  listener="#{tviaje.cambioEst(3,viaj)}"  update="msg"/>
+        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tagenda.value2}" >
+             <p:ajax  listener="#{tagenda.cambioEst(3,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -85,15 +85,15 @@
         </p:tab>
            <p:tab title="Abril">                    
                   <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(4)}" reflow="true" rows="10" paginator="true">
+                 <p:dataTable var="viaj" value="#{tagenda.obtenerLViajesG(4)}" reflow="true" rows="10" paginator="true">
     <p:column headerText="Viajes Guardados" >
         <h:outputText value="#{viaj}" />
     </p:column>
  
     <p:column headerText="Estado del Viaje:">
          
-        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tviaje.value2}" >
-             <p:ajax  listener="#{tviaje.cambioEst(4,viaj)}"  update="msg"/>
+        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tagenda.value2}" >
+             <p:ajax  listener="#{tagenda.cambioEst(4,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -103,15 +103,15 @@
         </p:tab>
         <p:tab title="Mayo">
                   <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(5)}" reflow="true" rows="10" paginator="true">
+                 <p:dataTable var="viaj" value="#{tagenda.obtenerLViajesG(5)}" reflow="true" rows="10" paginator="true">
     <p:column headerText="Viajes Guardados" >
         <h:outputText value="#{viaj}" />
     </p:column>
  
   <p:column headerText="Estado del Viaje:">
          
-        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tviaje.value2}" >
-             <p:ajax  listener="#{tviaje.cambioEst(5,viaj)}"  update="msg"/>
+        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tagenda.value2}" >
+             <p:ajax  listener="#{tagenda.cambioEst(5,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -121,15 +121,15 @@
         </p:tab>
         <p:tab title="Junio">
                 <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(6)}" reflow="true" rows="10" paginator="true">
+                 <p:dataTable var="viaj" value="#{tagenda.obtenerLViajesG(6)}" reflow="true" rows="10" paginator="true">
     <p:column headerText="Viajes Guardados" >
         <h:outputText value="#{viaj}" />
     </p:column>
  
  <p:column headerText="Estado del Viaje:">
          
-        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tviaje.value2}" >
-             <p:ajax  listener="#{tviaje.cambioEst(6,viaj)}"  update="msg"/>
+        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tagenda.value2}" >
+             <p:ajax  listener="#{tagenda.cambioEst(6,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -139,15 +139,15 @@
         </p:tab>
            <p:tab title="Julio">                    
                   <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(7)}" reflow="true" rows="10" paginator="true">
+                 <p:dataTable var="viaj" value="#{tagenda.obtenerLViajesG(7)}" reflow="true" rows="10" paginator="true">
     <p:column headerText="Viajes Guardados" >
         <h:outputText value="#{viaj}" />
     </p:column>
  
  <p:column headerText="Estado del Viaje:">
          
-        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tviaje.value2}" >
-             <p:ajax  listener="#{tviaje.cambioEst(7,viaj)}"  update="msg"/>
+        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tagenda.value2}" >
+             <p:ajax  listener="#{tagenda.cambioEst(7,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -157,15 +157,15 @@
               </p:tab>  
         <p:tab title="Agosto">
                 <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(8)}" reflow="true" rows="10" paginator="true">
+                 <p:dataTable var="viaj" value="#{tagenda.obtenerLViajesG(8)}" reflow="true" rows="10" paginator="true">
     <p:column headerText="Viajes Guardados" >
         <h:outputText value="#{viaj}" />
     </p:column>
  
   <p:column headerText="Estado del Viaje:">
          
-        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tviaje.value2}" >
-             <p:ajax  listener="#{tviaje.cambioEst(8,viaj)}"  update="msg"/>
+        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tagenda.value2}" >
+             <p:ajax  listener="#{tagenda.cambioEst(8,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -175,15 +175,15 @@
         </p:tab>
         <p:tab title="Septiembre">
                <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(9)}" reflow="true" rows="10" paginator="true">
+                 <p:dataTable var="viaj" value="#{tagenda.obtenerLViajesG(9)}" reflow="true" rows="10" paginator="true">
     <p:column headerText="Viajes Guardados" >
         <h:outputText value="#{viaj}" />
     </p:column>
  
   <p:column headerText="Estado del Viaje:">
          
-        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tviaje.value2}" >
-             <p:ajax  listener="#{tviaje.cambioEst(9,viaj)}"  update="msg"/>
+        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tagenda.value2}" >
+             <p:ajax  listener="#{tagenda.cambioEst(9,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -193,15 +193,15 @@
         </p:tab>
            <p:tab title="Octubre">                    
               <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(10)}" reflow="true" rows="10" paginator="true">
+                 <p:dataTable var="viaj" value="#{tagenda.obtenerLViajesG(10)}" reflow="true" rows="10" paginator="true">
     <p:column headerText="Viajes Guardados" >
         <h:outputText value="#{viaj}" />
     </p:column>
  
  <p:column headerText="Estado del Viaje:">
          
-        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tviaje.value2}" >
-             <p:ajax  listener="#{tviaje.cambioEst(10,viaj)}"  update="msg"/>
+        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tagenda.value2}" >
+             <p:ajax  listener="#{tagenda.cambioEst(10,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -211,15 +211,15 @@
         </p:tab>
         <p:tab title="Noviembre">
                <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(11)}" reflow="true" rows="10" paginator="true">
+                 <p:dataTable var="viaj" value="#{tagenda.obtenerLViajesG(11)}" reflow="true" rows="10" paginator="true">
     <p:column headerText="Viajes Guardados" >
         <h:outputText value="#{viaj}" />
     </p:column>
  
  <p:column headerText="Estado del Viaje:">
          
-        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tviaje.value2}" >
-             <p:ajax  listener="#{tviaje.cambioEst(11,viaj)}"  update="msg"/>
+        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tagenda.value2}" >
+             <p:ajax  listener="#{tagenda.cambioEst(11,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>
@@ -229,15 +229,15 @@
         </p:tab>
         <p:tab title="Diciembre">
                   <h:panelGrid columns="3" cellpadding="5" style="height: 495px;" >
-                 <p:dataTable var="viaj" value="#{tviaje.obtenerLViajesG(12)}" reflow="true" rows="10" paginator="true">
+                 <p:dataTable var="viaj" value="#{tagenda.obtenerLViajesG(12)}" reflow="true" rows="10" paginator="true">
     <p:column headerText="Viajes Guardados" >
         <h:outputText value="#{viaj}" />
     </p:column>
  
  <p:column headerText="Estado del Viaje:">
          
-        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tviaje.value2}" >
-             <p:ajax  listener="#{tviaje.cambioEst(12,viaj)}"  update="msg"/>
+        <p:inputSwitch  onLabel="Realizado" offLabel="Guardado" value="#{tagenda.value2}" >
+             <p:ajax  listener="#{tagenda.cambioEst(12,viaj)}"  update="msg"/>
         </p:inputSwitch>
        
     </p:column>

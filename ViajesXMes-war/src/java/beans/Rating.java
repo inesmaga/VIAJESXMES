@@ -36,10 +36,7 @@ public class Rating  implements Serializable{
    @Inject 
    private SitioController sitioController;
 
-   @PostConstruct
-    public void init() {
-     this.ObtenerAvg();  
-    }
+  
     public Integer getRating1() {
         return rating1;
     }
@@ -66,15 +63,7 @@ public class Rating  implements Serializable{
     
     
     
-   public void ObtenerAvg() {
- 
-   int cv=sitioController.getCodviaj();
-   
-   ViaAVG= valoracionFacade.ratingAverage(cv);
-  this.setRating2(ViaAVG);
 
- 
-   }
 
 
 

@@ -85,18 +85,17 @@
                     <h:form id="fsbtn">
 
                         <p:commandButton  id="at" icon="ui-icon-arrowthick-1-w"  value="Atrás" action="re"/>
-                        <p:commandButton  id="fv" icon="ui-icon-heart"  value="Favorito" actionListener="" action="re" update="mensaje" />
                         <p:commandButton  id="op" icon="ui-icon-comment"  value="Opinar" onclick="PF('dlg4').show();" />
                         <p:commandButton  id="va" icon="ui-icon-star "  value="Valorar" onclick="PF('dlg5').show();"/>
-                         <p:commandButton  id="fv" icon="ui-icon-heart"  value="Favorito" actionListener="#{agendaController.cambioFavori()}" action="re" update="mensaje" />
+                        <p:commandButton  id="fv" icon="ui-icon-heart"  value="Favorito" actionListener="#{agendaController.cambioFavori()}" action="re" update="mensaje" />
                         <p:commandButton  id="ga" icon="ui-icon-disk"  value="Guardar" actionListener="#{agendaController.registrar()}" action="re" update="mensaje" />
                     </h:form>
 
                     <p:dialog header="Opiniones"   widgetVar="dlg4" modal="true" showEffect="explode"  style="-moz-border-radius: 15px ; -webkit-border-radius: 15px" hideEffect="bounce"  resizable="true" height="510" width="510">
                         <p:messages  id="mensaje" autoUpdate="true"    showDetail="true"/>
                         <h:form>
-                            <p:fieldset legend="Opiniones ◄╝Otros Usuarios" toggleable="true" toggleSpeed="500" collapsed="true">
-                              
+                            <p:fieldset legend="Opiniones◄╝Otros Usuarios" toggleable="true" toggleSpeed="500" collapsed="true">
+
     <h:form id="form6">
         <p:dataList value="#{opinionController.listarOpinionesOU()}" var="oou" type="ordered">
         <f:facet name="header">
@@ -126,12 +125,11 @@
                         <h:form id="fsbv">
                <h:panelGrid columns="2" cellpadding="6">
                                 <h:outputText value="Valoración Promedio:" />
-                                  <p:rating value="#{rating.rating2}"  >
-                                </p:rating>             
-                                <h:outputText value="#{rating.rating2}" />
+                                <p:rating value="#{rating.rating2}" readonly="true" />  
                                 <h:outputText value="Tu Valoración:" />
                                 <p:rating value="#{rating.rating1}"  >
-                                </p:rating>
+                              
+                            </p:rating>
                 </h:panelGrid> 
                              <p:column/>
                             <p:commandButton  id="rva" icon="ui-icon-star"  value="Valorar" actionListener="#{valoracionController.regisValorac()}" onclick="Sitio.xhtml" update="mensaje"/>

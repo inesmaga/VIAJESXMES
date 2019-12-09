@@ -97,7 +97,7 @@ private Registro registro;
        int idm= plantillaController.getAm();
        String namviaj=plantillaController.getNamemenu();
    agendaFacade.CFavoritoVij(eip,idm,namviaj);
-    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Gracias,Su Viaje ha sido Guardado","como Favorito"));
+    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Gracias,su Viaje ha sido Guardado como Favorito","gracias"));
   
     }
       

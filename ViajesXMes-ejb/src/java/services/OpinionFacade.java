@@ -88,7 +88,7 @@ public class OpinionFacade extends AbstractFacade<Opinion> implements OpinionFac
    List<Opinion> lista= query.getResultList();
            if(!lista.isEmpty()){
          
-        cop = lista.get(0).getCodigo();
+        cop = lista.get(0).getCodigo().intValue();
          
                   }
       } catch (Exception e) {

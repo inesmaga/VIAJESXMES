@@ -88,22 +88,7 @@ public class ValoracionFacade extends AbstractFacade<Valoracion> implements Valo
      return cva;
     }  
     
-    @Override
-    public int ratingAverage(int idv){
-          int ratingAvg;
-       String consulta;
-        try {
-            consulta ="SELECT AVG(v.valorac) FROM Valoracion v WHERE  v.idviaje=?1 ";
-           Query query = em.createQuery(consulta);
-            query.setParameter(1, idv); 
-              List<Valoracion> lista= query.getResultList();
-           ratingAvg = lista.get(0).getValorac();
-           return ratingAvg;
-             } catch (Exception e) {
-            throw e;
-        }
-       
-    }
+   
     
     
 }

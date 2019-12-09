@@ -36,7 +36,6 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Menu.findByNombre", query = "SELECT m FROM Menu m WHERE m.nombre = :nombre")
     , @NamedQuery(name = "Menu.findByTipo", query = "SELECT m FROM Menu m WHERE m.tipo = :tipo")
     , @NamedQuery(name = "Menu.findByUrl", query = "SELECT m FROM Menu m WHERE m.url = :url")
-    , @NamedQuery(name = "Menu.findByComand", query = "SELECT m FROM Menu m WHERE m.comand = :comand")
     , @NamedQuery(name = "Menu.findByTipoUsuario", query = "SELECT m FROM Menu m WHERE m.tipoUsuario = :tipoUsuario")
     , @NamedQuery(name = "Menu.findByEstado", query = "SELECT m FROM Menu m WHERE m.estado = :estado")})
 public class Menu implements Serializable {
@@ -52,31 +51,28 @@ public class Menu implements Serializable {
     @Column(name = "idmes")
     private int idmes;
     @Basic(optional = false)
- 
+  
     @Column(name = "nombre")
     private String nombre;
     @Basic(optional = false)
-  
+ 
     @Column(name = "tipo")
     private String tipo;
-
+  
     @Column(name = "url")
     private String url;
-
-    @Column(name = "Comand")
-    private String comand;
     @Basic(optional = false)
 
     @Lob
-   
+  
     @Column(name = "Descripcion")
     private String descripcion;
     @Basic(optional = false)
-   
+    
     @Column(name = "tipoUsuario")
     private String tipoUsuario;
     @Basic(optional = false)
-   
+ 
     @Column(name = "estado")
     private boolean estado;
     @OneToMany(mappedBy = "codigoSubmenu")
@@ -140,14 +136,6 @@ public class Menu implements Serializable {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public String getComand() {
-        return comand;
-    }
-
-    public void setComand(String comand) {
-        this.comand = comand;
     }
 
     public String getDescripcion() {

@@ -35,5 +35,7 @@ public interface AgendaFacadeLocal {
  void CEstnameVij(int idpers,int idmes,String nv);
  
  void CFavoritoVij(int idpers,int idmes,String nv);
+ 
+ List <Agenda>  findViajFav( int idpers);
     
 }

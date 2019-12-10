@@ -83,4 +83,21 @@ public class AgendaFacade extends AbstractFacade<Agenda> implements AgendaFacade
             throw e;
         }
    }  
+   
+        @Override
+   public List <Agenda>  findViajFav(int idpers){
+ String consulta;
+        try {
+         consulta ="SELECT a.nameviaje FROM Agenda a WHERE   a.idpersona=?1 and a.favorito=?2";
+           Query query = em.createQuery(consulta);
+            query.setParameter(1, idpers);
+             query.setParameter(2, "true");
+           List<Agenda> lista= query.getResultList();    
+            return lista; 
+    
+        } catch (Exception e) {
+            throw e;
+}
+    }
+   
 }

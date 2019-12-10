@@ -11,7 +11,6 @@ import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
-import org.primefaces.event.SelectEvent;
 import services.AgendaFacadeLocal;
 
 /**
@@ -43,7 +42,7 @@ private SitioController sitioController;
     
  private boolean value2;
  private List<Agenda>Ltviaje;
- private List<Agenda>LtviajeR;
+ 
  private int codm;
     public boolean isValue2() {
         return value2;
@@ -86,6 +85,7 @@ private SitioController sitioController;
 return Ltviaje;
     }
 
+    
     public List<Agenda> getLtviaje() {
         return Ltviaje;
     }

@@ -100,7 +100,7 @@ private Registro registro;
     FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Gracias,su Viaje ha sido Guardado como Favorito","gracias"));
   
     }
-      
+    
     
     public AgendaController() {
     }

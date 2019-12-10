@@ -36,7 +36,7 @@ display: -webkit-box;
    width: 250px;
    height: 120px;
 }
-#logom2{
+ #logom2{
      align-content: center;
    align-items: center;
     margin-left:1%;
@@ -186,7 +186,7 @@ fbtni{
 #pri{
     margin-top: -200px;
     float: right;
-   max-width:100%;
+   max-width:110%;
    
    
 }

@@ -8,10 +8,13 @@ package beans;
 import entities.Agenda;
 import java.io.Serializable;
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import org.primefaces.model.DefaultTreeNode;
+import org.primefaces.model.TreeNode;
 import services.AgendaFacadeLocal;
 
 /**
@@ -39,14 +42,57 @@ public class Tviaje implements Serializable{
     
      public List<Agenda>obtenerLViajesF( ){
         int idpers=registro.getPers();
-        
+       Boolean favor=true;
      try {
-LtviajeF = agendaFacade.findViajFav(idpers);
+LtviajeF = agendaFacade.findByFavorito(idpers);
+        } catch (Exception e) {
+            //mensaje de jsf
+        }
+return LtviajeF;
+    } 
+     
+   public List<Agenda>obtenerLViajesG( ){
+        int idpers=registro.getPers();
+   
+     try {
+LtviajeF = agendaFacade.findByViajesG(idpers);
+        } catch (Exception e) {
+            //mensaje de jsf
+        }
+return LtviajeF;
+    }    
+
+  public List<Agenda>obtenerLViajesR( ){
+        int idpers=registro.getPers();
+       Boolean favor=true;
+     try {
+LtviajeF = agendaFacade.findByViajesR(idpers);
         } catch (Exception e) {
             //mensaje de jsf
         }
 return LtviajeF;
     } 
     
-    
+   public List<Agenda>obtenerLViajesO( ){
+        int idpers=registro.getPers();
+       Boolean favor=true;
+     try {
+LtviajeF = agendaFacade.findByOpinado(idpers);
+        } catch (Exception e) {
+            //mensaje de jsf
+        }
+return LtviajeF;
+    } 
+   
+   
+    public List<Agenda>obtenerLViajesV( ){
+        int idpers=registro.getPers();
+       Boolean favor=true;
+     try {
+LtviajeF = agendaFacade.findByValorado(idpers);
+        } catch (Exception e) {
+            //mensaje de jsf
+        }
+return LtviajeF;
+    } 
 }

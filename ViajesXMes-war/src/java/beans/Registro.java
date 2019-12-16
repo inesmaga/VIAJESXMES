@@ -123,10 +123,11 @@ public class Registro implements Serializable{
          }
              
      }
-     
+  private   int intento=0;
      public String iniciarSesion(){
     String redireccion=null;
     Persona per;
+    
         try {
           per= personaFacade.iniciarSesion(username,clave);
           if(per!= null){
@@ -135,7 +136,13 @@ public class Registro implements Serializable{
              redireccion="principal";
              
           }else{
-          FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso" , "Credenciales Incorrectas"));
+               intento=intento+1;
+           if (intento!=3){    
+          FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso" , "Credenciales Incorrectas, intento:"+intento+" de 3"));
+           }else{
+            redireccion="index";
+             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso" , "Haz superado los intentos con Credenciales Incorrectas, Cambiala!"));
+         }
           }
         } catch (Exception e) {
           FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Fatal!", "System Error"));
@@ -143,7 +150,20 @@ public class Registro implements Serializable{
         }
         return redireccion;
     }
-       public int getPers() {
+     
+    public String actualiza(){ 
+  
+        try {
+     personaFacade.actualizarPassw(username,clave);
+      
+    iniciarSesion();
+    return redireccion;
+
+}catch(Exception e){
+    throw e;
+}
+    } 
+     public int getPers() {
         return pers;
     }
 

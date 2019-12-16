@@ -48,7 +48,13 @@
             <to-view-id>/agenda.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    
+       <navigation-rule>
+        <from-view-id>/tusviajes.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>atr</from-outcome>
+            <to-view-id>/agenda.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
    <navigation-rule>
         <from-view-id>/bangkok.xhtml</from-view-id>
         <navigation-case>
@@ -105,6 +111,10 @@
             <from-outcome>case2</from-outcome>
             <to-view-id>/principal.xhtml</to-view-id>
         </navigation-case>
+         <navigation-case>
+            <from-outcome>case3</from-outcome>
+            <to-view-id>/principal.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/WEB-INF/protegido/febrero.xhtml</from-view-id>
@@ -113,6 +123,7 @@
             <to-view-id>/principal.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    
     <managed-bean>
         <managed-bean-name>agendaController</managed-bean-name>
         <managed-bean-class>beans.AgendaController</managed-bean-class>

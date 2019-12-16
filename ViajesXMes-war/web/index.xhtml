@@ -117,6 +117,28 @@
 
 
                     </h:form>
+                     <h:form>
+
+                        <p:fieldset legend="Olvidaste Contraseña?" toggleable="true" toggleSpeed="500"  collapsed="true">
+
+
+                            <h:panelGrid id="panel" columns="3" >
+                                <p:focus context="panel"/>
+                                <p:outputLabel  for="txtUsuario1" value="Usuario" />
+                                <p:inputText   id="txtUsuario1"   value="#{registro.username}" required="true" requiredMessage="Campo Requerido,Indique un Usuario"/>
+                                <p:message for="txtUsuario1"/>
+                                <p:outputLabel  for="clave11" value="Password"/>
+                                <p:password id="clave11"   value="#{registro.clave}" required="true"  requiredMessage="Campo Requerido,Indique una Clave" 
+                                            promptLabel="Ingrese una Clave"/>
+                                <p:message for="clave11"/>
+                                <p:column/>
+                                <p:commandButton id="login3" value="Login" icon="ui-icon-key"   action="#{registro.actualiza()}" style="margin:0"  />
+                            </h:panelGrid> 
+
+                        </p:fieldset> 
+
+
+                    </h:form>
                 </p:dialog>
             </div>         
             <div class="footer" >

@@ -88,7 +88,7 @@
                                     </p:selectOneRadio> 
                                     <p:message for="rdbTipo"/>
                                     <p:column/>
-                                    <p:commandButton id="saveBtn" value="Registrar"   update="mensaje"  actionListener="#{registro.registrar()}"   icon="ui-icon-disk" style="margin:0"  />
+                                    <p:commandButton id="saveBtn" value="Registrar"   update="mensaje"  action="#{registro.registrar()}"    icon="ui-icon-disk" style="margin:0"  />
                                 </h:panelGrid> 
 
                             </p:fieldset>
@@ -127,12 +127,12 @@
                                 <p:outputLabel  for="txtUsuario1" value="Usuario" />
                                 <p:inputText   id="txtUsuario1"   value="#{registro.username}" required="true" requiredMessage="Campo Requerido,Indique un Usuario"/>
                                 <p:message for="txtUsuario1"/>
-                                <p:outputLabel  for="clave11" value="Password"/>
-                                <p:password id="clave11"   value="#{registro.clave}" required="true"  requiredMessage="Campo Requerido,Indique una Clave" 
+                                <p:outputLabel  for="clave3" value=" New Password"/>
+                                <p:password id="clave3"   value="#{registro.clave}" required="true"  requiredMessage="Campo Requerido,Indique una nueva Clave" 
                                             promptLabel="Ingrese una Clave"/>
-                                <p:message for="clave11"/>
+                                <p:message for="clave3"/>
                                 <p:column/>
-                                <p:commandButton id="login3" value="Login" icon="ui-icon-key"   action="#{registro.actualiza()}" style="margin:0"  />
+                                <p:commandButton id="login3" value="Cambiar" icon="ui-icon-key" update="mensaje"  action="#{registro.actualiza()}"  style="margin:0"  />
                             </h:panelGrid> 
 
                         </p:fieldset> 

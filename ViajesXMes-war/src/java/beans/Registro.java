@@ -116,13 +116,28 @@ public class Registro implements Serializable{
       
       FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Bienvenida/o" , "YA ERES DE LOS NUESTROS!"));
       
-     iniciarSesion();
-  return redireccion;
+    
+  return this.iniciarSesion();
          } catch (Exception e) {
              throw e;
          }
              
      }
+     
+    public String actualiza(){ 
+  
+        try {
+     personaFacade.actualizarPassw(username,clave);
+      FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Bienvenida/o" , "TU PASSWORD HA SIDO CAMBIADA"));
+    
+    return this.iniciarSesion();
+
+}catch(Exception e){
+    throw e;
+}
+    }    
+     
+     
   private   int intento=0;
      public String iniciarSesion(){
     String redireccion=null;
@@ -141,8 +156,9 @@ public class Registro implements Serializable{
           FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso" , "Credenciales Incorrectas, intento:"+intento+" de 3"));
            }else{
             redireccion="index";
-             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso" , "Haz superado los intentos con Credenciales Incorrectas, Cambiala!"));
-         }
+             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso" , "Has  superado los intentos con Credenciales Incorrectas, Cambiala!"));
+             
+           }
           }
         } catch (Exception e) {
           FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Fatal!", "System Error"));
@@ -151,18 +167,7 @@ public class Registro implements Serializable{
         return redireccion;
     }
      
-    public String actualiza(){ 
   
-        try {
-     personaFacade.actualizarPassw(username,clave);
-      
-    iniciarSesion();
-    return redireccion;
-
-}catch(Exception e){
-    throw e;
-}
-    } 
      public int getPers() {
         return pers;
     }

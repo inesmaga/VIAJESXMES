@@ -36,6 +36,14 @@ public interface AgendaFacadeLocal {
  
  void CFavoritoVij(int idpers,int idmes,String nv);
  
- List <Agenda>  findViajFav( int idpers);
+  List <Agenda> findByFavorito( int idp );
+  
+  List <Agenda> findByValorado( int idp );
+  
+  List <Agenda> findByOpinado( int idp );
+  
+  List <Agenda> findByViajesG( int idp );
+  
+  List <Agenda> findByViajesR( int idp );
     
 }

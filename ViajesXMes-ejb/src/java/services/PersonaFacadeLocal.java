@@ -33,4 +33,6 @@ public interface PersonaFacadeLocal {
     Persona iniciarSesion(String pe1, String pe2);
     
     int codPers(String user);
+    
+     void actualizarPassw(String pe1, String pe2);
 }

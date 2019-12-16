@@ -52,6 +52,23 @@ public class PersonaFacade extends AbstractFacade<Persona> implements PersonaFac
         }
         return person;
     } 
+         @Override
+    public void actualizarPassw(String pe1, String pe2){
+   
+    String consulta;
+        try {
+            consulta ="UPDATE  Persona  SET clave=?2 WHERE  username=?1 ";
+           Query query = em.createQuery(consulta);
+            query.setParameter(1, pe1);
+             query.setParameter(2, pe2);
+            query.executeUpdate();
+           
+           
+        } catch (Exception e) {
+            throw e;
+        }
+      
+    } 
     
     @Override
     public int codPers(String user){
@@ -61,7 +78,7 @@ public class PersonaFacade extends AbstractFacade<Persona> implements PersonaFac
     query.setParameter("username",user);
    List<Persona> lista= query.getResultList();
            if(!lista.isEmpty()){
-               cperson= lista.get(0).getCodigo();
+               cperson= lista.get(0).getCodigo().intValue();
            }
            
            

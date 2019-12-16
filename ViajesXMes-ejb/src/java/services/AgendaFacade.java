@@ -67,8 +67,47 @@ public class AgendaFacade extends AbstractFacade<Agenda> implements AgendaFacade
        
    }
     @Override
+     public List <Agenda> findByViajesG( int idp ){
+   
+   String consulta;
+        try {
+         consulta ="SELECT a.nameviaje FROM Agenda a WHERE   a.idpersona=?1 and a.estado=?2";
+           Query query = em.createQuery(consulta);
+           
+            query.setParameter(1, idp);
+             query.setParameter(2, "G");
+           List<Agenda> lista= query.getResultList();    
+            return lista; 
+    
+        } catch (Exception e) {
+            throw e;
+}
+   
+     }
+ 
+ @Override
+     public List <Agenda> findByViajesR( int idp ){
+   
+   String consulta;
+        try {
+         consulta ="SELECT a.nameviaje FROM Agenda a WHERE   a.idpersona=?1 and a.estado=?2";
+           Query query = em.createQuery(consulta);
+           
+            query.setParameter(1, idp);
+             query.setParameter(2, "R");
+           List<Agenda> lista= query.getResultList();    
+            return lista; 
+    
+        } catch (Exception e) {
+            throw e;
+}
+   
+     }    
+     
+     
+    @Override
    public void CFavoritoVij(int idpers,int idmes,String nv){
-       List <Agenda> namev = null ;
+     
        String consulta;
        try {
               consulta ="UPDATE  Agenda a  SET a.favorito='true' WHERE  a.idmes=?1 and a.idpersona=?2 and a.nameviaje=?3";
@@ -84,20 +123,46 @@ public class AgendaFacade extends AbstractFacade<Agenda> implements AgendaFacade
         }
    }  
    
-        @Override
-   public List <Agenda>  findViajFav(int idpers){
- String consulta;
+
+   @Override
+      public List <Agenda> findByFavorito( int idp ){
         try {
-         consulta ="SELECT a.nameviaje FROM Agenda a WHERE   a.idpersona=?1 and a.favorito=?2";
-           Query query = em.createQuery(consulta);
-            query.setParameter(1, idpers);
-             query.setParameter(2, "true");
-           List<Agenda> lista= query.getResultList();    
-            return lista; 
+            Query query =em.createNamedQuery("Agenda.findByFavorito");
     
+    query.setParameter("idpersona",idp);
+   query.setParameter("favorito",true);
+    return query.getResultList();
         } catch (Exception e) {
             throw e;
 }
-    }
-   
+      }
+      
+   @Override
+      public List <Agenda> findByValorado( int idp ){
+        try {
+            Query query =em.createNamedQuery("Agenda.findByValorado");
+    
+    query.setParameter("idpersona",idp);
+   query.setParameter("valorado",true);
+    return query.getResultList();
+        } catch (Exception e) {
+            throw e;
+}
+      }   
+      
+     @Override
+      public List <Agenda> findByOpinado( int idp ){
+        try {
+            Query query =em.createNamedQuery("Agenda.findByOpinado");
+    
+    query.setParameter("idpersona",idp);
+   query.setParameter("opinado",true);
+    return query.getResultList();
+        } catch (Exception e) {
+            throw e;
+}
+      } 
+      
+      
+      
 }

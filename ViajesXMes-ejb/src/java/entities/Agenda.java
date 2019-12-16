@@ -34,11 +34,11 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Agenda.findByIdviaje", query = "SELECT a FROM Agenda a WHERE a.idviaje = :idviaje")
     , @NamedQuery(name = "Agenda.findByNameviaje", query = "SELECT a FROM Agenda a WHERE a.nameviaje = :nameviaje")
     , @NamedQuery(name = "Agenda.findByEstado", query = "SELECT a FROM Agenda a WHERE a.estado = :estado")
-    , @NamedQuery(name = "Agenda.findByFavorito", query = "SELECT a FROM Agenda a WHERE a.favorito = :favorito")
-    , @NamedQuery(name = "Agenda.findByValorado", query = "SELECT a FROM Agenda a WHERE a.valorado = :valorado")
-    , @NamedQuery(name = "Agenda.findByOpinado", query = "SELECT a FROM Agenda a WHERE a.opinado = :opinado")
-    , @NamedQuery(name = "Agenda.findByIdopinion", query = "SELECT a FROM Agenda a WHERE a.idopinion = :idopinion")
-    , @NamedQuery(name = "Agenda.findByIdvalorac", query = "SELECT a FROM Agenda a WHERE a.idvalorac = :idvalorac")})
+    , @NamedQuery(name = "Agenda.findByFavorito", query = "SELECT a.nameviaje FROM Agenda a WHERE  a.idpersona = :idpersona and  a.favorito = :favorito")
+    , @NamedQuery(name = "Agenda.findByValorado", query = "SELECT a.nameviaje FROM Agenda a WHERE   a.idpersona = :idpersona and a.valorado = :valorado")
+    , @NamedQuery(name = "Agenda.findByOpinado", query = "SELECT a.nameviaje FROM Agenda a WHERE  a.idpersona = :idpersona and a.opinado = :opinado")
+    , @NamedQuery(name = "Agenda.findByIdopinion", query = "SELECT a.nameviaje FROM Agenda a WHERE a.idpersona = :idpersona and  a.idopinion = :idopinion")
+    , @NamedQuery(name = "Agenda.findByIdvalorac", query = "SELECT a FROM Agenda a WHERE  a.idpersona = :idpersona and a.idvalorac = :idvalorac")})
 public class Agenda implements Serializable {
 
     private static final long serialVersionUID = 1L;

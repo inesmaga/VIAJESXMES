@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <meta name="viewport" content="width=device-width,user-scalable=si,initial-scale=1.0"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
@@ -110,22 +111,17 @@
                                             promptLabel="Ingrese una Clave"/>
                                 <p:message for="clave11"/>
                                 <p:column/>
-                                <p:commandButton id="login" value="Login" icon="ui-icon-key"   action="#{registro.iniciarSesion()}" style="margin:0"  />
+                                <p:commandButton id="login" value="Login" icon="ui-icon-key"     action="#{registro.iniciarSesion()}"  style="margin:0" />
+                                
                             </h:panelGrid> 
 
-                        </p:fieldset> 
-
-
-                    </h:form>
-                     <h:form>
-
-                        <p:fieldset legend="Olvidaste Contraseña?" toggleable="true" toggleSpeed="500"  collapsed="true">
-
-
-                            <h:panelGrid id="panel" columns="3" >
+                         </p:fieldset> 
+<!--                         <p:separator/>
+                         <p:fieldset  id="CP" legend="Change Password" toggleable="true" toggleSpeed="500" collapsed="true" >
+                             <h:panelGrid id="panel6" columns="3"  >
                                 <p:focus context="panel"/>
                                 <p:outputLabel  for="txtUsuario1" value="Usuario" />
-                                <p:inputText   id="txtUsuario1"   value="#{registro.username}" required="true" requiredMessage="Campo Requerido,Indique un Usuario"/>
+                                <p:inputText   id="txtUsuario2"   value="#{registro.username}" required="true" requiredMessage="Campo Requerido,Indique un Usuario"/>
                                 <p:message for="txtUsuario1"/>
                                 <p:outputLabel  for="clave3" value=" New Password"/>
                                 <p:password id="clave3"   value="#{registro.clave}" required="true"  requiredMessage="Campo Requerido,Indique una nueva Clave" 
@@ -133,12 +129,10 @@
                                 <p:message for="clave3"/>
                                 <p:column/>
                                 <p:commandButton id="login3" value="Cambiar" icon="ui-icon-key" update="mensaje"  action="#{registro.actualiza()}"  style="margin:0"  />
-                            </h:panelGrid> 
-
-                        </p:fieldset> 
-
-
+                            </h:panelGrid>   
+                        </p:fieldset> -->
                     </h:form>
+                   
                 </p:dialog>
             </div>         
             <div class="footer" >
@@ -149,10 +143,7 @@
             </div>
         </div>
 
-        <br />
-        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
-        <br />
-        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+       
     </h:body>
 
 

@@ -157,10 +157,11 @@ return this.iniciarSesion();
          per= personaFacade.iniciarSesion(username,clave);
            if(per == null) {
               if( intento<=3 ){
-               intento=intento+1;
+               
               
                    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso" , "Credenciales Incorrectas, intento:"+intento+" de 3"));
-                  redireccion="index"; 
+                  intento=intento+1;
+                   redireccion="index"; 
                }else{
          
              FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso" , "Has  superado los intentos con Credenciales Incorrectas, Cambiala!"));

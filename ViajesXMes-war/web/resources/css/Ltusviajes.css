@@ -52,14 +52,12 @@ display: -webkit-flex;
 
 
 
-.center{
-width:90%;
-max-width:99%; 
+#center{
+width:118%;
+max-width:118%; 
 height: auto;
 margin-bottom: 5%;
 margin-top: 3%;
-
-
 }
 
 
@@ -73,9 +71,9 @@ margin-top: 3%;
 
    clear: both;
    background-position: center;
-   width:95%;
-   max-width:98%;
-   margin-left: 10%;
+   width:80%;
+   max-width:80%;
+   margin-left: 6%;
    margin-right: 10%;
      -moz-border-radius: 10px ;
    -webkit-border-radius: 10px ;
@@ -84,7 +82,7 @@ margin-top: 3%;
 #fote{
     display: block; 	
  float:left;
-max-width: 70%;
+max-width: 100%;
 margin-top: 3%; 
 margin-bottom: 0px;
 flex-shrink: 1;
@@ -166,7 +164,7 @@ justify-content: space-between;
 {
     width: 110%;
     max-width: 100%;
-    min-width: 95%;
+    min-width: 98%;
     height: 100%;
     margin:0 0 ;
     overflow: hidden;

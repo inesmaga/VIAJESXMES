@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+          <meta name="viewport" content="width=device-width,user-scalable=si,initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <link rel="stylesheet" type="text/css" href="normalize.css" />
+        <link rel="stylesheet" type="text/css"  media ="all" href="resources/css/viajestuagenda.css"/>
+        <h:outputScript library="scripts" name="spanishlocale.js"/>
+        <link rel="shortcut icon"  href="resources/images/travel-ico.ico"/>
+        <title>ANUARIO-VIAJES-TUS-VIAJES</title>
+    </h:head>
+    <h:body>
+        <div class="flex-container">
+         <div class="header">
+                <p:graphicImage id="logo" library="images"   name="LOGOVIAJ.jpeg" />
+            </div>
+ <div class="center" >  
+         <p:messages id="msg" autoUpdate="true"    showDetail="true" />    
+        <p:panelGrid  id="pg2" layout="grid" columns="5"   style="height: auto; margin-left: 5%; margin-top: 1%; width: 95%; -moz-border-radius: 15px ;-webkit-border-radius: 15px ;"> 
+   <h:form id="form" style="height: auto; margin-bottom: 2%;">
+       
+    <p:carousel numVisible="1" effect="easeInStrong" headerText="Tus Viajes" itemStyle="height:auto;text-align:center"  easing="easeOutBounce" style="width:650px; margin-left: 3%;" circular="true">
+        <p:tab title="Favoritos">
+            <h:outputText value="Favoritos"/>
+           
+                 <p:dataList value="#{tviaje.obtenerLViajesF()}" var="fav" type="ordered">
+          #{fav}
+  </p:dataList>
+              
+         
+        </p:tab>
+        <p:tab title="Guardados">
+               <h:outputText value="Guardados"/>
+           
+                <p:dataList value="#{tviaje.obtenerLViajesG()}" var="gua" type="ordered">
+          #{gua}
+  </p:dataList>
+            
+        </p:tab>
+        <p:tab title="Realizados">
+            <h:outputText value="Realizados"/>
+           
+                <p:dataList value="#{tviaje.obtenerLViajesR()}" var="rea" type="ordered">
+          #{rea}
+  </p:dataList>
+      
+        </p:tab>
+         <p:tab title="Opinados">
+               <h:outputText value="Opinados"/>
+        
+                <p:dataList value="#{tviaje.obtenerLViajesO()}" var="opi" type="ordered">
+          #{opi}
+  </p:dataList>
+           
+        </p:tab>
+         <p:tab title="Valorados">
+               <h:outputText value="Valorados"/>
+          
+                <p:dataList value="#{tviaje.obtenerLViajesV()}" var="val" type="ordered">
+          #{val}
+  </p:dataList>
+      
+        </p:tab>
+    </p:carousel>    
+ 
+   </h:form>         
+        </p:panelGrid> 
+  </div>
+             <div id="regres">
+            <h:form id="fbtnh">
+               <p:commandButton  id="atr" icon="ui-icon-arrowthick-1-w"  value="Atrás" action="atr"/> 
+             </h:form>
+            </div>
+            <div class="footer" >
+                <div  class="filaFoot">
+                <p:graphicImage id="fote" library="images"   name="FOOTER.png" />
+                 <p:graphicImage  id="logom" library="images" name="LogoMumtm.png" />
+                </div>
+            </div>  
+</div>
+    </h:body>
+</html>
+

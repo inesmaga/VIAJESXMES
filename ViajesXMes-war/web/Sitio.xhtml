@@ -73,7 +73,7 @@
             </div>
             <div id="content2" >
                 <ui:insert name="content2">
-                    <p:scrollPanel  id="ps0" mode="native"  style="margin-top:15px; width:460px;height:275px">
+                    <p:scrollPanel  id="ps0" mode="native"  style="margin-top:15px; width:440px;height:275px">
                         <h:outputText id="DESC"  value="#{sitioController.DESC}" />
                     </p:scrollPanel> 
 
@@ -109,7 +109,7 @@
                         </h:form>
                         <h:form>
                             <p:fieldset legend="Tú Opinión" toggleable="true" toggleSpeed="500" collapsed="true">
-                                <p:editor widgetVar="editor2"  id="tuopinion" value="#{opinionController.topinion}"   style=" width: 300px;height: 300px;-moz-border-radius: 10px ; -webkit-border-radius: 10px "/> 
+                                <p:editor widgetVar="editor2"  id="tuopinion" value="#{opinionController.topinion}"   style=" width: 300px;height: 200px;-moz-border-radius: 10px ; -webkit-border-radius: 10px "/> 
                                 <h:panelGrid columns="2" style="margin-top:5px">
                                     <p:commandButton id="saveOp" value="Opinar"   actionListener="#{opinionController.regisOpinion()}"  onclick="Sitio.xhtml" update="mensaje" icon="ui-icon-comment" />
 

@@ -60,7 +60,7 @@ public class SitioController implements Serializable {
     private String DCO;
     private String WEB;
 private String DESC;
-
+ 
 @Inject
 private PlantillaController plantillaController;
 
@@ -99,10 +99,10 @@ Simagenes = new ArrayList<>(plantillaController.getImagenes());
     public void setSimages(List<String> Simages) {
         this.Simages = Simages;
     }
- 
 
 
-    public void verificarSitio() {
+
+       public void verificarSitio() {
  Viajes ve;
       int codig;
         CLL = null;
@@ -201,7 +201,7 @@ Simagenes = new ArrayList<>(plantillaController.getImagenes());
         this.codviaj = codviaj;
     }
    
-    
+ 
              
              
              

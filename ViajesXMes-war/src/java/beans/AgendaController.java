@@ -50,7 +50,7 @@ private Registro registro;
     
  @Inject 
    private SitioController sitioController;
- 
+
     
     public void  registrar() {
         Agenda a = new Agenda();
@@ -86,8 +86,11 @@ private Registro registro;
       }
      
       agendaFacade.create(a);
+
        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Gracias,Su Viaje ha sido Guardado","gracias"));
-      } catch (Exception e) {
+     
+         
+         } catch (Exception e) {
              throw e;
          }       
      }      
@@ -97,6 +100,7 @@ private Registro registro;
        int idm= plantillaController.getAm();
        String namviaj=plantillaController.getNamemenu();
    agendaFacade.CFavoritoVij(eip,idm,namviaj);
+   
     FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Gracias,su Viaje ha sido Guardado como Favorito","gracias"));
   
     }

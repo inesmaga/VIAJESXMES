@@ -26,7 +26,7 @@
                         <p:graphicImage id="logom"   value="#{plantillaController.imagenes}"  library="images" name="/logom/#{plantillaController.imagenes.get(0)}"  style=" -moz-border-radius: 10px ;-webkit-border-radius: 10px ;"/>
                     </div>
                     <div class="info">
-                        <p:panel id="vertical" header="A Dónde Ir:" toggleable="true" collapsed="true" closeSpeed="500" toggleOrientation="vertical">
+                        <p:panel id="vertical" header="A Dónde Ir:" toggleable="true" collapsed="false" closeSpeed="500" toggleOrientation="vertical">
                             <h:panelGrid columns="2" cellpadding="4"> 
                                 <h:outputText id="AD"
                                               value="#{mBean.ADI}" />
@@ -47,7 +47,7 @@
                         <h:form>  
                             
                             <p:growl id="messages" showDetail="false"/>   
-                            <p:menu toggleable="true"    style="text-align: center;" model="#{plantillaController.model}"/>
+                            <p:menu toggleable="true"   style="text-align: center; "  model="#{plantillaController.model}"/>
                         
                         </h:form>   
                        
@@ -58,9 +58,9 @@
                         
                     </ui:insert> 
                 </div>
-                <div id="right" style="margin-top:-250px ;margin-left: 1%; margin-right:10px; width: 415px;height:auto;">
+                <div id="right" style="margin-top:-265px ;margin-left: 1%; margin-right:10px; width: 415px;height:auto;">
                     <ui:insert name="right">
-                        <p:imageSwitch  id="pri" effect="zoom" style="margin-top:-250px ;margin-right:10px; margin-left: 1%;width: 415px;height:auto;" >
+                        <p:imageSwitch  id="pri" effect="zoom" style="margin-top:-265px ;margin-right:10px; margin-left: 1%;width: 450px;height:auto;" >
                             <ui:repeat value="#{plantillaController.images}" var="image">
                                 <p:graphicImage  library="images" name="/mfotos/#{image}" style="-moz-border-radius: 10px ;-webkit-border-radius: 10px ;" />
                             </ui:repeat>

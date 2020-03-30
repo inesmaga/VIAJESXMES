@@ -31,4 +31,8 @@ public interface ViajesFacadeLocal {
     int count();
     
     Viajes buscaviajemenu(int idm);
+    
+    void actualizarNSelect(int idvia, int nsel);
+    
+   Integer  obtenerNSel(int idv);
 }

@@ -34,10 +34,10 @@ public class ViajesFacade extends AbstractFacade<Viajes> implements ViajesFacade
      @Override
     public Viajes buscaviajemenu(int idm) {
         Viajes viaje = null;
-        String consulta;
+      
         try {
-            consulta ="SELECT v FROM Viajes v WHERE v.idmenu = ?1";
-           Query query =   em.createQuery(consulta);
+             Query query =em.createNamedQuery("Viajes.findByIdmenu");
+           
             query.setParameter(1, idm);
             List<Viajes> lista= query.getResultList();
            if(!lista.isEmpty()){
@@ -50,4 +50,38 @@ public class ViajesFacade extends AbstractFacade<Viajes> implements ViajesFacade
      return viaje;
     
     }   
+    @Override 
+      public Integer  obtenerNSel(int idv){
+          int nsel=0;
+        try {
+            Query query =em.createNamedQuery("Viajes.findByIdviajes");
+    query.setParameter("idviajes",idv);
+      List<Viajes> lista=query.getResultList();
+      if(!lista.isEmpty()){
+            nsel= lista.get(0).getNSelect().intValue();
+           
+          }
+        } catch (Exception e) {
+            throw e;
+}
+    return nsel;
+    }
+    @Override
+     public void actualizarNSelect(int idvia, int nsel){
+   
+    String consulta;
+        try {
+            consulta ="UPDATE  Viajes v SET v.NSelect=?2 WHERE  v.idviajes=?1 ";
+           Query query = em.createQuery(consulta);
+            query.setParameter(1, idvia);
+             query.setParameter(2, nsel);
+            query.executeUpdate();
+           
+           
+        } catch (Exception e) {
+            throw e;
+        }
+      
+    }  
+    
 }
